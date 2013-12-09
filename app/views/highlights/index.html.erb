@@ -4,7 +4,6 @@
   <tr>
     <th>Date</th>
     <th>Title</th>
-    <th>Opponent</th>
     <th>Link</th>
     <th>Comments</th>
     <th></th>
@@ -16,7 +15,6 @@
   <tr>
     <td><%= highlight.date %></td>
     <td><strong><%= highlight.title %></strong></td>
-    <td><%= highlight.opponent %></td>
     <td><%= link_to image_tag("http://img.youtube.com/vi/#{highlight.link}/0.jpg", :width => 75), highlight  %></td>
     <td><%= highlight.comments %></td>
     <td><%= link_to 'Show', highlight, :class => "btn btn-default btn-sm"  %></td>
