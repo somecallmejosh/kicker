@@ -1,0 +1,31 @@
+<h1>Highlights</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Date</th>
+    <th>Title</th>
+    <th>Opponent</th>
+    <th>Link</th>
+    <th>Comments</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @highlights.each do |highlight| %>
+  <tr>
+    <td><%= highlight.date %></td>
+    <td><strong><%= highlight.title %></strong></td>
+    <td><%= highlight.opponent %></td>
+    <td><%= link_to image_tag("http://img.youtube.com/vi/#{highlight.link}/0.jpg", :width => 75), highlight  %></td>
+    <td><%= highlight.comments %></td>
+    <td><%= link_to 'Show', highlight, :class => "btn btn-default btn-sm"  %></td>
+    <td><%= link_to 'Edit', edit_highlight_path(highlight), :class => "btn btn-default btn-sm"  %></td>
+    <td><%= link_to 'Destroy', highlight, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default btn-sm"  %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Highlight', new_highlight_path, :class => "btn btn-default btn-sm" %>

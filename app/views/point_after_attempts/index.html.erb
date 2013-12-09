@@ -1,0 +1,31 @@
+<h1>Point After Attempts</h1>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-primary">
+      <div class="panel-body">PAT Points: <%= @totalpoints %></div>
+    </div>
+  </div>  
+</div>
+<table class="table table-striped">
+  <tr>
+    <th>Date</th>
+    <th>PAT Good?</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @point_after_attempts.each do |point_after_attempt| %>
+  <tr>
+    <td><%= point_after_attempt.date %></td>
+    <td><%= point_after_attempt.is_good ? 'Yes' : 'No'  %></td>
+    <td><%= link_to 'Show', point_after_attempt, :class => "btn btn-default btn-sm"  %></td>
+    <td><%= link_to 'Edit', edit_point_after_attempt_path(point_after_attempt), :class => "btn btn-default btn-sm"  %></td>
+    <td><%= link_to 'Destroy', point_after_attempt, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default btn-sm"  %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Point after attempt', new_point_after_attempt_path, :class => "btn btn-default btn-sm" %>

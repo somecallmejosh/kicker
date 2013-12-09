@@ -1,0 +1,46 @@
+<h1>Kickoffs</h1>
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel panel-primary">
+      <div class="panel-body">Kickoff Points:<br><%= @totalpoints %></div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-primary">
+      <div class="panel-body">Kickoff Average Distance:<br><%= @average_distance %> yards</div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="panel panel-primary">
+      <div class="panel-body">Kickoff Average Hangtime:<br><%= @average_hang %> seconds</div>
+    </div>
+  </div>
+</div>
+
+
+
+<table class="table table-striped">
+  <tr>
+    <th>Date</th>
+    <th>Distance</th>
+    <th>Hangtime</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @kickoffs.each do |kickoff| %>
+  <tr>
+    <td><%= kickoff.date %></td>
+    <td><%= kickoff.distance %></td>
+    <td><%= kickoff.hangtime %></td>
+    <td><%= link_to 'Show', kickoff, :class => "btn btn-default btn-sm"  %></td>
+    <td><%= link_to 'Edit', edit_kickoff_path(kickoff), :class => "btn btn-default btn-sm"  %></td>
+    <td><%= link_to 'Destroy', kickoff, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default btn-sm"  %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Kickoff', new_kickoff_path, :class => "btn btn-default btn-sm" %>

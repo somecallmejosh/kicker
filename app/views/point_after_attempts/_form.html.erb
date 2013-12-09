@@ -1,0 +1,25 @@
+<%= form_for(@point_after_attempt) do |f| %>
+  <% if @point_after_attempt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@point_after_attempt.errors.count, "error") %> prohibited this point_after_attempt from being saved:</h2>
+
+      <ul>
+      <% @point_after_attempt.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :is_good %><br />
+    <%= f.check_box :is_good %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Submit', :class => "btn btn-primary btn-sm" %>
+  </div>
+<% end %>

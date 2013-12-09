@@ -1,0 +1,2 @@
+module PuntsHelper
+end

@@ -1,0 +1,38 @@
+<h1>Punts</h1>
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-primary">
+      <div class="panel-body">Punt Average Distance:<br><%= @average_distance %> yards</div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-primary">
+      <div class="panel-body">Punt Average Hangtime:<br><%= @average_hang %> seconds</div>
+    </div>
+  </div>
+</div>
+<table class="table table-striped">
+  <tr>
+    <th>Date</th>
+    <th>Distance</th>
+    <th>Hangtime</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @punts.each do |punt| %>
+  <tr>
+    <td><%= punt.date %></td>
+    <td><%= punt.distance %></td>
+    <td><%= punt.hangtime %></td>
+    <td><%= link_to 'Show', punt, :class => "btn btn-default btn-sm"  %></td>
+    <td><%= link_to 'Edit', edit_punt_path(punt), :class => "btn btn-default btn-sm"  %></td>
+    <td><%= link_to 'Destroy', punt, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default btn-sm"  %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Punt', new_punt_path, :class => "btn btn-default btn-sm" %>

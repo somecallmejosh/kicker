@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @punt.date %>
+</p>
+
+<p>
+  <b>Distance:</b>
+  <%= @punt.distance %>
+</p>
+
+<p>
+  <b>Hangtime:</b>
+  <%= @punt.hangtime %>
+</p>
+
+
+<%= link_to 'Edit', edit_punt_path(@punt), :class => "btn btn-default btn-sm"  %>
+<%= link_to 'Back', punts_path, :class => "btn btn-default btn-sm"  %>

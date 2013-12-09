@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @point_after_attempt.date %>
+</p>
+
+<p>
+  <b>Is good:</b>
+  <%= @point_after_attempt.is_good %>
+</p>
+
+
+<%= link_to 'Edit', edit_point_after_attempt_path(@point_after_attempt), :class => "btn btn-default btn-sm"  %>
+<%= link_to 'Back', point_after_attempts_path, :class => "btn btn-default btn-sm"  %>

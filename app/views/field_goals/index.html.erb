@@ -1,0 +1,40 @@
+<h1>Field Goals</h1>
+
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-primary">
+      <div class="panel-body">Field Goal Points: <%= @totalpoints %></div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-primary">
+      <div class="panel-body">Field Goal Long: <%= @max_distance %> yards</div>
+    </div>
+  </div>
+</div>
+
+<table class="table table-striped">
+  <tr>
+    <th>Date</th>
+    <th>Distance</th>
+    <th>FG Good?</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @field_goals.each do |field_goal| %>
+  <tr>
+    <td><%= field_goal.date %></td>
+    <td><%= field_goal.distance %></td>
+    <td><%= field_goal.is_good  ? 'Yes' : 'No' %></td>
+    <td><%= link_to 'Show', field_goal, :class => "btn btn-default btn-sm"  %></td>
+    <td><%= link_to 'Edit', edit_field_goal_path(field_goal), :class => "btn btn-default btn-sm"  %></td>
+    <td><%= link_to 'Destroy', field_goal, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default btn-sm"  %></td>
+  </tr>
+<% end %>
+</table>
+
+
+
+<%= link_to 'New Field goal', new_field_goal_path, :class => "btn btn-default btn-sm" %>

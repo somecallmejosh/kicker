@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @kickoff.date %>
+</p>
+
+<p>
+  <b>Distance:</b>
+  <%= @kickoff.distance %>
+</p>
+
+<p>
+  <b>Hangtime:</b>
+  <%= @kickoff.hangtime %>
+</p>
+
+
+<%= link_to 'Edit', edit_kickoff_path(@kickoff), :class => "btn btn-default btn-sm"  %>
+<%= link_to 'Back', kickoffs_path, :class => "btn btn-default btn-sm"  %>
