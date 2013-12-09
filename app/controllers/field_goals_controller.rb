@@ -3,8 +3,8 @@ class FieldGoalsController < ApplicationController
   # GET /field_goals.json
   def index
     @field_goals = FieldGoal.all
-    # @totalpoints = FieldGoal.count(:conditions => { :is_good => true }) * 3
-    # @max_distance = FieldGoal.maximum('distance', :conditions => {:is_good => true})
+    @totalpoints = FieldGoal.count(:conditions => { :is_good => true }) * 3
+    @max_distance = FieldGoal.maximum('distance', :conditions => {:is_good => true})
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @field_goals }
