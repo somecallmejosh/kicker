@@ -3,8 +3,8 @@ class PuntsController < ApplicationController
   # GET /punts.json
   def index
     @punts = Punt.all
-    @average_distance = Punt.average('distance').round(1)
-    @average_hang = Punt.average('hangtime').round(1)
+    @average_distance = Punt.average('distance')
+    @average_hang = Punt.average('hangtime')
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @punts }
