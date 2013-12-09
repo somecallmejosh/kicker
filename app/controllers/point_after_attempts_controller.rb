@@ -3,9 +3,6 @@ class PointAfterAttemptsController < ApplicationController
   # GET /point_after_attempts.json
   def index
     @point_after_attempts = PointAfterAttempt.all
-    @totalpoints = PointAfterAttempt.count(:conditions => { :is_good => true })
-    @totalkicks = PointAfterAttempt.count('is_good')
-    @pat_average = @totalpoints / @totalkicks
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @point_after_attempts }
