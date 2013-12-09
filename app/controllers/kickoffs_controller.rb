@@ -3,7 +3,7 @@ class KickoffsController < ApplicationController
   # GET /kickoffs.json
   def index
     @kickoffs = Kickoff.all
-    @totalpoints = Kickoff.sum('distance')
+    @total_yards = Kickoff.sum('distance')
     @average_distance = Kickoff.average('distance').round(1)
     @average_hang = Kickoff.average('hangtime').round(1)
     respond_to do |format|
