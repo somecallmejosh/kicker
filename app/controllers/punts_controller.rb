@@ -3,7 +3,7 @@ class PuntsController < ApplicationController
   # GET /punts.json
   def index
     @punts = Punt.all
-    @punt_long = Punt.maximum('distance').round(1)
+    @punt_long = Punt.maximum('distance')
     @punt_toal = Punt.sum('distance').round(1)
     @punt_count = Punt.count('distance').round(1)
     @punt_average = (@punt_toal / @punt_count).round(1)
