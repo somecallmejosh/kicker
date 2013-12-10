@@ -1,6 +1,34 @@
-<h1>Test</h1>
-<p>This will show up only if you're logged in.</p>
 
+
+<div class="row text-center">
+	<div class="col-md-3">
+		<div class="jumbotron">
+			<p><strong>Total Field Goals:</strong> </p>
+			<h1><%= @total_field_goals %></h1>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="jumbotron">
+			<p><strong>Field Goal Long:</strong></p>
+			<h1><%= @field_goal_long %></h1>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="jumbotron">
+			<p><strong>Total Kickoff Yards:</strong></p>
+			<h1><%= @total_kickoff_yards %></h1>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<div class="jumbotron">
+			<p><strong>Kickoff Long:</strong></p>
+			<h1><%= @kickoff_long %></h1>
+		</div>
+	</div>
+</div>
+<hr>
+<h1>Quick Add</h1>
+<p>This will show up only if you're logged in.</p>
 <div class="row">
 	<div class="col-md-3">
 		<%= link_to "Add Kickoff", new_kickoff_path, :class => "btn btn-default btn-block" %>
