@@ -2,5 +2,3 @@
 
 require ::File.expand_path('../config/environment',  __FILE__)
 run Kicker::Application
-
-require 'bootstrap-sass'
