@@ -4,8 +4,9 @@ class KickoffsController < ApplicationController
   def index
     @kickoffs = Kickoff.all
     @total_yards = Kickoff.sum('distance')
-    @kickoff_long = Kickoff.maximum('distance')
-    @hangtime_long = Kickoff.average('hangtime')
+    @count_yards = Kickoff.count('distance')
+    @kickoff_long = @total_yards / @count_yards
+    @hangtime_long = Kickoff.maximum('hangtime')
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @kickoffs }
