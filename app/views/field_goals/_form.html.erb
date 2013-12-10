@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :date %><br />
-    <%= f.date_select :date %>
+    <%= f.date_select :date, :class => "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :distance %><br />
-    <%= f.number_field :distance %>
+    <%= f.number_field :distance, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :is_good %><br />
-    <%= f.check_box :is_good %>
+  <div class="form-group">
+    <%= f.check_box :is_good  %>
+    <%= f.label :is_good,'Field Goal Good?' %>
   </div>
   <div class="actions">
     <%= f.submit 'Submit', :class => "btn btn-primary btn-sm" %>

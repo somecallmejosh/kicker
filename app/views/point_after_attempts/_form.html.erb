@@ -11,13 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :date %><br />
-    <%= f.date_select :date %>
+    <%= f.date_select :date, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :is_good %><br />
+  <div class="form-group">
     <%= f.check_box :is_good %>
+    <%= f.label :is_good, "Successful attempt?" %>
   </div>
   <div class="actions">
     <%= f.submit 'Submit', :class => "btn btn-primary btn-sm" %>
