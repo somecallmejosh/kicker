@@ -5,7 +5,7 @@ class KickoffsController < ApplicationController
     @kickoffs = Kickoff.all
     @total_yards = Kickoff.sum('distance')
     @count_yards = Kickoff.count('distance')
-    @kickoff_long = @total_yards / @count_yards
+    @kickoff_long = (@total_yards / @count_yards).round(2)
     @hangtime_long = Kickoff.maximum('hangtime')
     respond_to do |format|
       format.html # index.html.erb
