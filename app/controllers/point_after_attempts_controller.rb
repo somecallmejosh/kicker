@@ -13,14 +13,7 @@ class PointAfterAttemptsController < ApplicationController
 
   # GET /point_after_attempts/1
   # GET /point_after_attempts/1.json
-  def show
-    @point_after_attempt = PointAfterAttempt.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @point_after_attempt }
-    end
-  end
 
   # GET /point_after_attempts/new
   # GET /point_after_attempts/new.json

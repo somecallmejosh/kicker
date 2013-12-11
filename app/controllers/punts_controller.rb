@@ -16,14 +16,6 @@ class PuntsController < ApplicationController
 
   # GET /punts/1
   # GET /punts/1.json
-  def show
-    @punt = Punt.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @punt }
-    end
-  end
 
   # GET /punts/new
   # GET /punts/new.json

@@ -13,14 +13,6 @@ class FieldGoalsController < ApplicationController
 
   # GET /field_goals/1
   # GET /field_goals/1.json
-  def show
-    @field_goal = FieldGoal.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @field_goal }
-    end
-  end
 
   # GET /field_goals/new
   # GET /field_goals/new.json

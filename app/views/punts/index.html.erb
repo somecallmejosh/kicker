@@ -25,7 +25,6 @@
         <th>Hangtime</th>
         <th></th>
         <th></th>
-        <th></th>
       </tr>
     </thead> 
     <tbody>
@@ -34,7 +33,6 @@
           <td><%= punt.date %></td>
           <td><%= punt.distance %></td>
           <td><%= punt.hangtime %></td>
-          <td><%= link_to 'Show', punt, :class => "btn btn-default btn-sm"  %></td>
           <td><%= link_to 'Edit', edit_punt_path(punt), :class => "btn btn-default btn-sm"  %></td>
           <td><%= link_to 'Destroy', punt, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default btn-sm"  %></td>
         </tr>
