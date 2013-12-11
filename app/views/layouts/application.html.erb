@@ -3,14 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title><%= content_for?(:title) ? yield(:title) : "Kicking Prospect" %></title>
-
-    <%= stylesheet_link_tag    "application" %>
-    
+    <%= stylesheet_link_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
-
   <body>
     <nav class="top-bar" data-topbar>
       <ul class="title-area">
@@ -34,7 +30,6 @@
           </li>
         </ul>
       </section>
-
     </nav>
     <%= yield %>
     <%= javascript_include_tag "application" %>
