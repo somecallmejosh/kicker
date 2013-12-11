@@ -4,21 +4,21 @@
   </div>
 </div>
 <div class="row">
-<% @highlights.each do |highlight| %>
-  <div class="large-3 columns">
-    <div class="thumbnail">
+<div class="large-12 columns">
+  <ul class="large-block-grid-4">
+  <% @highlights.each do |highlight| %>
+    <li>
       <%= link_to image_tag("http://img.youtube.com/vi/#{highlight.link}/0.jpg", :class => "img-responsive"), highlight  %>
-      <div class="caption">
-        <h3><%= highlight.title %></h3>
-        <small><%= highlight.date %> vs. <%= highlight.opponent %></small>
-        <p><%= highlight.comments %></p>
-        <%= link_to 'Show', highlight, :class => "btn btn-default btn-sm"  %>
-        <%= link_to 'Edit', edit_highlight_path(highlight), :class => "btn btn-default btn-sm"  %>
-        <%= link_to 'Destroy', highlight, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default btn-sm"  %>
-      </div>
-    </div>
-  </div>
-<% end %>
+      <h3><%= highlight.title %></h3>
+      <small><%= highlight.date %> vs. <%= highlight.opponent %></small>
+      <p><%= highlight.comments %></p>
+      <%= link_to 'Show', highlight, :class => "button secondary tiny"  %>
+      <%= link_to 'Edit', edit_highlight_path(highlight), :class => "button secondary tiny"  %>
+      <%= link_to 'Destroy', highlight, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button secondary tiny"  %>
+    </li>
+  <% end %>
+  </ul>
+</div>
 </div>
 
 <div class="row">
