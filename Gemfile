@@ -18,7 +18,7 @@ end
 # in production environments by default.
 group :assets do
   gem 'sass-rails', '>= 3.2' # sass-rails needs to be higher than 3.2
-  gem 'foundation-rails'
+  gem 'zurb-foundation', '= 3.2.5'
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
