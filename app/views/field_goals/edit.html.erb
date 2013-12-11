@@ -1,14 +1,14 @@
-<h1>Editing Field Goal</h1>
 <div class="row">
-	<div class="col-md-4">
-		<div class="well">
+	<div class="large-4 columns">
+		<div class="panel">
 			<h3>Edit Field Goal</h3>
 			<%= render 'form' %>
 		</div>
 	</div>
-	<div class="col-md-8"></div>
+	<div class="large-8 columns">
+		<h1>Edit <small>Field Goal</small></h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, voluptates, libero fugiat consectetur magni voluptate assumenda consequatur recusandae voluptas quia harum maxime suscipit cum iure in mollitia quis aperiam nostrum.</p>
+		<%= link_to 'Show', @field_goal, :class => "button secondary"  %>
+		<%= link_to 'Back to Stats', field_goals_path, :class => "button secondary"  %>
+	</div>
 </div>
-
-
-<%= link_to 'Show', @field_goal, :class => "btn btn-default btn-sm"  %>
-<%= link_to 'Back', field_goals_path, :class => "btn btn-default btn-sm"  %>
