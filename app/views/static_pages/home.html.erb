@@ -6,25 +6,25 @@
 
 <div class="row text-center">
 	<div class="large-3 columns">
-		<div class="jumbotron">
+		<div class="panel">
 			<p><strong>Total Points:</strong> </p>
 			<h1><%= @total_points %></h1>
 		</div>
 	</div>
 	<div class="large-3 columns">
-		<div class="jumbotron">
+		<div class="panel">
 			<p><strong>Field Goal Long:</strong></p>
 			<h1><%= @field_goal_long %></h1>
 		</div>
 	</div>
 	<div class="large-3 columns">
-		<div class="jumbotron">
+		<div class="panel">
 			<p><strong>Kickoff Long:</strong></p>
 			<h1><%= @kickoff_long %></h1>
 		</div>
 	</div>
 	<div class="large-3 columns">
-		<div class="jumbotron">
+		<div class="panel">
 			<p><strong>Total Kickoff Yards:</strong></p>
 			<h1><%= @total_kickoff_yards %></h1>
 		</div>
@@ -39,16 +39,16 @@
 	
 <div class="row">
 	<div class="large-3 columns">
-		<%= link_to "Add Kickoff", new_kickoff_path, :class => "btn btn-default btn-block" %>
+		<%= link_to "Add Kickoff", new_kickoff_path, :class => "button expand" %>
 	</div>
 	<div class="large-3 columns">
-		<%= link_to "Add Field Goal", new_field_goal_path, :class => "btn btn-default btn-block" %>
+		<%= link_to "Add Field Goal", new_field_goal_path, :class => "button expand" %>
 	</div>
 	<div class="large-3 columns">
-		<%= link_to "Add PAT", new_point_after_attempt_path, :class => "btn btn-default btn-block" %>
+		<%= link_to "Add PAT", new_point_after_attempt_path, :class => "button expand" %>
 	</div>
 	<div class="large-3 columns">
-		<%= link_to "Add Punt", new_punt_path, :class => "btn btn-default btn-block" %>
+		<%= link_to "Add Punt", new_punt_path, :class => "button expand" %>
 	</div>
 </div>
 

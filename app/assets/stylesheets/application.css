@@ -13,3 +13,5 @@
 
  *= require_tree .
  */
+
+.block {display: block !important; width: 100%}
