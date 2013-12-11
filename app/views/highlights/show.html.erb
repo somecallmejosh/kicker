@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 <div class="row">
-	<div class="large-12 columns">
+	<div class="large-6 columns">
 		<h1><%= @highlight.title %></h1>
+	</div>
+	<div class="large-6 columns text-right">
+		<%= link_to("Previous", @highlight.previous_highlight, :class => "button secondary tiny") if @highlight.previous_highlight %>
+		<%= link_to("Next", @highlight.next_highlight, :class => "button secondary tiny") if @highlight.next_highlight %>
 	</div>
 </div>
 <div class="row">
