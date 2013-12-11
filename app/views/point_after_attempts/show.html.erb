@@ -1,7 +1,10 @@
 <div class="row">
 	<div class="large-12 columns">
-		<h1>PAT <small>Submitted</small></h1>
-		<%= link_to 'Edit', edit_point_after_attempt_path(@point_after_attempt), :class => "button secondary"  %>
-		<%= link_to 'Back', point_after_attempts_path, :class => "button secondary"  %>
+		<div class="panel">
+			<h1>PAT <small>Submitted</small></h1>
+			<p>The <strong>PAT</strong> you kicked on <%= @kickoff.date %> has been logged.</p>
+			<%= link_to 'Edit', edit_point_after_attempt_path(@point_after_attempt), :class => "button secondary"  %>
+			<%= link_to 'Back to PAT Stats', point_after_attempts_path, :class => "button secondary"  %>
+		</div>
 	</div>
 </div>

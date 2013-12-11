@@ -1,7 +1,10 @@
 <div class="row">
 	<div class="large-12 columns">
-		<h1>Punt <small>Submitted</small></h1>
-		<%= link_to 'Edit', edit_punt_path(@punt), :class => "button secondary"  %>
-		<%= link_to 'Back', punts_path, :class => "button secondary"  %>
+		<div class="panel">
+			<h1><%= @punt.distance %>yd Punt <small>Submitted</small></h1>
+			<p>The <strong><%= @punt.distance %>yd punt</strong>  with a <strong><%= @punt.hangtime %> sec hangtime</strong> on <%= @punt.date %> has been logged.</p>
+			<%= link_to 'Edit', edit_punt_path(@punt), :class => "button secondary"  %>
+			<%= link_to 'Back to Punt Stats', punts_path, :class => "button secondary"  %>
+		</div>
 	</div>
 </div>

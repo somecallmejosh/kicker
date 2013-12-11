@@ -28,7 +28,7 @@
         <td><%= point_after_attempt.date %></td>
         <td><%= point_after_attempt.is_good ? 'Yes' : 'No'  %></td>
         <td><%= link_to 'Edit', edit_point_after_attempt_path(point_after_attempt), :class => "button secondary tiny"  %></td>
-        <td><%= link_to 'Destroy', point_after_attempt, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button secondary tiny"  %></td>
+        <td><%= link_to 'Remove', point_after_attempt, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button secondary tiny"  %></td>
       </tr>
     <% end %>
       </tbody>

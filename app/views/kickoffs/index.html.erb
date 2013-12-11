@@ -40,7 +40,7 @@
             <td><%= kickoff.distance %></td>
             <td><%= kickoff.hangtime %></td>
             <td><%= link_to 'Edit', edit_kickoff_path(kickoff), :class => "button secondary tiny"  %></td>
-            <td><%= link_to 'Destroy', kickoff, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button secondary tiny"  %></td>
+            <td><%= link_to 'Remove', kickoff, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button secondary tiny"  %></td>
           </tr>
         <% end %>
         </tbody>

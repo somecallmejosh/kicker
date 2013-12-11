@@ -1,7 +1,10 @@
 <div class="row">
 	<div class="large-12 columns">
-		<h1>Kickoff <small>Submitted</small></h1>
-		<%= link_to 'Edit', edit_kickoff_path(@kickoff), :class => "button secondary"  %>
-		<%= link_to 'Back', kickoffs_path, :class => "button secondary"  %>
+		<div class="panel">
+			<h1><%= @kickoff.distance %>yd Kickoff <small>Submitted</small></h1>
+			<p>The <strong><%= @kickoff.distance %>yd kick</strong>  with a <strong><%= @kickoff.hangtime %> sec hangtime</strong> on <%= @kickoff.date %> has been logged.</p>
+			<%= link_to 'Edit', edit_kickoff_path(@kickoff), :class => "button secondary"  %>
+			<%= link_to 'Back to Kickoff Stats', kickoffs_path, :class => "button secondary"  %>
+		</div>
 	</div>
 </div>
