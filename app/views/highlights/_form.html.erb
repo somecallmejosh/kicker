@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :date %><br />
+  <div>
+    <%= f.label :date %>
     <%= f.date_select :date %>
   </div>
-  <div class="field">
-    <%= f.label :title %><br />
+  <div>
+    <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label :opponent %><br />
+  <div>
+    <%= f.label :opponent %>
     <%= f.text_field :opponent %>
   </div>
-  <div class="field">
-    <%= f.label :link %><br />
+  <div>
+    <%= f.label :link, "Link (Youtube ID)" %>
     <%= f.text_field :link %>
   </div>
-  <div class="field">
-    <%= f.label :comments %><br />
+  <div>
+    <%= f.label :comments %>
     <%= f.text_area :comments %>
   </div>
   <div class="actions">
-    <%= f.submit 'Submit', :class => "btn btn-primary btn-sm" %>
+    <%= f.submit 'Submit', :class => "button expand" %>
   </div>
 <% end %>
