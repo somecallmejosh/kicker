@@ -16,7 +16,6 @@ class KickoffsController < ApplicationController
   # GET /kickoffs/1
   # GET /kickoffs/1.json
 
-
   # GET /kickoffs/new
   # GET /kickoffs/new.json
   def new

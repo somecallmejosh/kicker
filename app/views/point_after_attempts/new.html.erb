@@ -1,13 +1,13 @@
-<h1>New Point After Attempt</h1>
-
 <div class="row">
-	<div class="col-md-4">
-		<div class="well">
+	<div class="large-4 columns">
+		<div class="panel">
 			<h3>Enter New PAT</h3>
 			<%= render 'form' %>
 		</div>
 	</div>
-	<div class="col-md-8"></div>
+	<div class="large-8 columns">
+		<h1>New <small>PAT</small></h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, voluptates, libero fugiat consectetur magni voluptate assumenda consequatur recusandae voluptas quia harum maxime suscipit cum iure in mollitia quis aperiam nostrum.</p>
+		<%= link_to 'Back to Stats', point_after_attempts_path, :class => "button secondary"  %>
+	</div>
 </div>
-
-<%= link_to 'Back', point_after_attempts_path, :class => "btn btn-default btn-sm"  %>
