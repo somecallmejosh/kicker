@@ -15,6 +15,14 @@ class KickoffsController < ApplicationController
 
   # GET /kickoffs/1
   # GET /kickoffs/1.json
+  def show
+    @kickoff = Kickoff.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @punt }
+    end
+  end
 
   # GET /kickoffs/new
   # GET /kickoffs/new.json
