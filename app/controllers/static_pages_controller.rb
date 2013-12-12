@@ -18,7 +18,7 @@ class StaticPagesController < ApplicationController
     @total_kicks = Kickoff.count('distance')
     @touchback_totals = Kickoff.count(:conditions => "distance > 60")
     @touchback_percentage = (@touchback_totals.to_f / @total_kicks.to_f * 100).round(1)
-    @average_hangtime = Kickoff.average('hangtime').round(1)
+    @average_hangtime = Kickoff.average('hangtime'.to_f).round(1)
 
 
     @punts = Punt.all
