@@ -30,4 +30,7 @@ class StaticPagesController < ApplicationController
   def bio
 
   end
+  def admin
+
+  end
 end

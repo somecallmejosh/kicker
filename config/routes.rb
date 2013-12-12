@@ -1,7 +1,7 @@
 Kicker::Application.routes.draw do
   get "static_pages/home"
   get "static_pages/bio"
-  
+  get "static_pages/admin"
   resources :point_after_attempts
 
 
