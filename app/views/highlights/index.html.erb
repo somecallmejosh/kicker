@@ -17,10 +17,14 @@
       <h3><%= highlight.title %></h3>
       <small><%= highlight.date %> vs. <%= highlight.opponent %></small>
       <p><%= highlight.comments %></p>
-      <%= link_to 'View', highlight, :class => "button secondary tiny"  %>
-      <% if user_signed_in? %>
-      <%= link_to 'Edit', edit_highlight_path(highlight), :class => "button secondary tiny"  %>
-      <%= link_to 'Remove', highlight, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button secondary tiny"  %>
+
+      <div class="text-center">
+        <%= link_to 'View', highlight, :class => "button secondary tiny"  %>
+        <% if user_signed_in? %>
+        <%= link_to 'Edit', edit_highlight_path(highlight), :class => "button secondary tiny"  %>
+        <%= link_to 'Remove', highlight, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button secondary tiny"  %>
+      </div>
+
       <% end %>
     </li>
   <% end %>
