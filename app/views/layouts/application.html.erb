@@ -12,14 +12,31 @@
       <div class="inner-wrap">
       
       <aside class="left-off-canvas-menu">
+        <% if user_signed_in? %>
+          <ul>
+            <li><label for="" class="first">Quick Add</label></li>
+            <li><%= link_to "Add Kickoff", new_kickoff_path, :class => "button secondary expand" %></li>
+            <li><%= link_to "Add Field Goal", new_field_goal_path, :class => "button secondary expand" %></li>
+            <li><%= link_to "Add PAT", new_point_after_attempt_path, :class => "button secondary expand" %></li>
+            <li><%= link_to "Add Punt", new_punt_path, :class => "button secondary expand" %></li>
+          </ul>
+        <% end %>
+
         <ul class="off-canvas-list">
+          <li><label class="first">Kicker's Name</label></li>
           <li><%= link_to "Home", static_pages_home_path %></li>
           <li><%= link_to "Bio", static_pages_bio_path %></li>
           <li><%= link_to "Highlights", highlights_path %></li>
+        </ul>
+        <ul class="off-canvas-list">
+          <li><label class="first">Stats</label></li>
           <li><%= link_to "Kickoffs", kickoffs_path %></li>
           <li><%= link_to "Field Goals", field_goals_path %></li>
           <li><%= link_to "PAT's", point_after_attempts_path %></li>
           <li><%= link_to "Punts", punts_path %></li>
+        </ul>
+        <ul class="off-canvas-list">
+          <li><label class="first">Action Center</label></li>
           <% if user_signed_in? %>
             <li><%= link_to "Admin", static_pages_admin_path %></li>
             <li><%= link_to "Log Out", logout_path %></li>  
@@ -34,7 +51,7 @@
 
       <nav class="tab-bar show-for-small">
         <a class="left-off-canvas-toggle menu-icon">
-          <span>Kicker</span>
+          <span>Kicker&nbsp;Name</span>
         </a>
       </nav>
       <nav class="top-bar hide-for-small" data-topbar>
