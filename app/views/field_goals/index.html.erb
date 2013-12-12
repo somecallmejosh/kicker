@@ -6,12 +6,17 @@
 
 
 <div class="row">
-  <div class="large-6 columns">
+  <div class="large-4 columns">
     <div class="panel">
       <strong>Field Goal Points:</strong> <%= @totalpoints %>
     </div>
   </div>
-  <div class="large-6 columns">
+  <div class="large-4 columns">
+    <div class="panel">
+      <strong>Field Goal Success:</strong> <%= @field_goal_percent %>%
+    </div>
+  </div>
+  <div class="large-4 columns">
     <div class="panel">
       <strong>Field Goal Long:</strong> <%= @max_distance %> yards
     </div>

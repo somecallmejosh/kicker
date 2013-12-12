@@ -5,6 +5,8 @@ class PointAfterAttemptsController < ApplicationController
     @point_after_attempts = PointAfterAttempt.all
     @totalpoints = PointAfterAttempt.count(:conditions => { :is_good => true })
     @totalkicks = PointAfterAttempt.count('is_good')
+    @pat_percent = (@totalpoints.to_f / @totalkicks.to_f * 100).round(1)
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @point_after_attempts }

@@ -5,6 +5,12 @@ class FieldGoalsController < ApplicationController
     @field_goals = FieldGoal.all
     @totalpoints = FieldGoal.count(:conditions => { :is_good => true }) * 3
     @max_distance = FieldGoal.maximum('distance', :conditions => {:is_good => true})
+
+    @field_goal_count = FieldGoal.count('is_good')
+    @field_goals_made = FieldGoal.count(:conditions => { :is_good => true })
+    @field_goal_percent = (@field_goals_made.to_f / @field_goal_count.to_f * 100).round(1)
+
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @field_goals }
