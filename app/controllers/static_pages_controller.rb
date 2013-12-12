@@ -21,7 +21,7 @@ class StaticPagesController < ApplicationController
 
     @hangtime_totals = Kickoff.sum('hangtime')
 
-    @average_hangtime = (@hangtime_totals.to_f / @total_kicks.to_f).round(1)
+    @average_hangtime = (@hangtime_totals.to_f / @total_kicks.to_f)
 
 
     @punts = Punt.all
