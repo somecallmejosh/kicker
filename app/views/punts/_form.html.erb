@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <%= simple_form_for(@punt) do |f| %>
   <% if @punt.errors.any? %>
     <div id="error_explanation">
@@ -14,4 +15,7 @@
   <%= f.input :distance, label: 'Distance (yards)' %>
   <%= f.input :hangtime, label: 'Hangimte (seconds)' %>
   <%= f.submit 'Submit', :class => "button expand" %>
+<% end %>
+<% else %>
+<p class="label alert">You must be logged in to add or edit Punts.</p>
 <% end %>

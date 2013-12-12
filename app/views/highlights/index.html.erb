@@ -3,7 +3,9 @@
     <h1>Kicking <small>Highlights</small></h1>
   </div>
   <div class="large-6 columns text-right">
+    <% if user_signed_in? %>
     <%= link_to 'New Highlight', new_highlight_path, :class => "button secondary tiny" %>
+    <% end %>
   </div>
 </div>
 <div class="row">
@@ -16,16 +18,19 @@
       <small><%= highlight.date %> vs. <%= highlight.opponent %></small>
       <p><%= highlight.comments %></p>
       <%= link_to 'View', highlight, :class => "button secondary tiny"  %>
+      <% if user_signed_in? %>
       <%= link_to 'Edit', edit_highlight_path(highlight), :class => "button secondary tiny"  %>
       <%= link_to 'Remove', highlight, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button secondary tiny"  %>
+      <% end %>
     </li>
   <% end %>
   </ul>
 </div>
 </div>
-
+<% if user_signed_in? %>
 <div class="row">
   <div class="large-12 columns">
     <%= link_to 'New Highlight', new_highlight_path, :class => "button secondary" %>
   </div>
 </div>
+<% end %>

@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <%= simple_form_for(@field_goal) do |f| %>
   <% if @field_goal.errors.any? %>
     <div id="error_explanation">
@@ -14,4 +15,7 @@
   <%= f.input :distance, label: 'Distance (yards)', error: 'Distance is missing.' %>
   <%= f.input :is_good, label: 'Field Goal Good?' %>
   <%= f.submit 'Submit', :class => "button expand" %>
+<% end %>
+<% else %>
+<p class="label alert">You must be logged in to add or edit Field Goals.</p>
 <% end %>

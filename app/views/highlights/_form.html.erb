@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <%= simple_form_for(@highlight) do |f| %>
   <% if @highlight.errors.any? %>
     <div id="error_explanation">
@@ -16,4 +17,7 @@
   <%= f.input :link, label: "Link (Youtube ID)" %>
   <%= f.input :comments %>
   <%= f.submit 'Submit', :class => "button expand" %>
+<% end %>
+<% else %>
+<p class="label alert">You must be logged in to add or edit Highlights.</p>
 <% end %>

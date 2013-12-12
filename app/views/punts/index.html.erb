@@ -3,7 +3,9 @@
     <h1>Punt <small>Stats</small></h1>
   </div>
   <div class="large-6 columns text-right">
-    <%= link_to 'New Punt', new_punt_path, :class => "button secondary tiny" %>
+    <% if user_signed_in? %>
+      <%= link_to 'New Punt', new_punt_path, :class => "button secondary tiny" %>
+    <% end %>
   </div>
 </div>
 <div class="row">
@@ -26,8 +28,10 @@
         <th>Date</th>
         <th>Distance</th>
         <th>Hangtime</th>
-        <th></th>
-        <th></th>
+        <% if user_signed_in? %>
+          <th></th>
+          <th></th>
+        <% end %>
       </tr>
     </thead> 
     <tbody>
@@ -36,15 +40,18 @@
           <td><%= punt.date %></td>
           <td><%= punt.distance %></td>
           <td><%= punt.hangtime %></td>
-          <td><%= link_to 'Edit', edit_punt_path(punt), :class => "button secondary tiny"  %></td>
-          <td><%= link_to 'Remove', punt, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button secondary tiny"  %></td>
+          <% if user_signed_in? %>
+            <td><%= link_to 'Edit', edit_punt_path(punt), :class => "button secondary tiny"  %></td>
+            <td><%= link_to 'Remove', punt, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button secondary tiny"  %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>
 </table>
 
-
-<%= link_to 'New Punt', new_punt_path, :class => "button secondary" %>
+<% if user_signed_in? %>
+  <%= link_to 'New Punt', new_punt_path, :class => "button secondary" %>
+<% end %>
 
   </div>
 </div>

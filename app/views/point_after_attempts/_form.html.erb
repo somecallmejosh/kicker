@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <%= simple_form_for(@point_after_attempt) do |f| %>
   <% if @point_after_attempt.errors.any? %>
     <div id="error_explanation">
@@ -13,4 +14,7 @@
   <%= f.input :date %>
   <%= f.input :is_good, label: "PAT Good?" %>
   <%= f.submit 'Submit', :class => "button expand" %>
+<% end %>
+<% else %>
+<p class="label alert">You must be logged in to add or edit PATs.</p>
 <% end %>

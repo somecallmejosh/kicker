@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <%= simple_form_for(@kickoff) do |f| %>
   <% if @kickoff.errors.any? %>
     <div id="error_explanation">
@@ -13,4 +14,7 @@
   <%= f.input :distance, label: "Distance (yards)" %>
   <%= f.input :hangtime %>
   <%= f.submit 'Submit', :class => "button expand" %>
+<% end %>
+<% else %>
+<p class="label alert">You must be logged in to add or edit Kickoffs.</p>
 <% end %>
