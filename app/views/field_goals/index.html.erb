@@ -1,6 +1,9 @@
 <div class="row">
-  <div class="large-12 columns">
+  <div class="large-6 columns">
     <h1>Field Goal <small>Stats</small></h1>
+  </div>
+  <div class="large-6 columns text-right">
+    <%= link_to 'New Field Goal', new_field_goal_path, :class => "button secondary tiny" %>
   </div>
 </div>
 
@@ -47,7 +50,7 @@
         <% end %>
       </tbody>
     </table>
-    <%= link_to 'New Field goal', new_field_goal_path, :class => "button secondary" %>
+    <%= link_to 'New Field Goal', new_field_goal_path, :class => "button secondary" %>
   </div>
 </div>
 
