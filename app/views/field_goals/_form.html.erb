@@ -1,4 +1,4 @@
-<%= form_for(@field_goal) do |f| %>
+<%= simple_form_for(@field_goal) do |f| %>
   <% if @field_goal.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@field_goal.errors.count, "error") %> prohibited this field_goal from being saved:</h2>
@@ -10,20 +10,8 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= f.label :date %>
-    <%= f.date_select :date %>
-  </div>
-  <div>
-    <%= f.label :distance, "Disance (yards)" %>
-    <%= f.number_field :distance %>
-  </div>
-  <div>
-    <%= f.check_box :is_good  %>
-    <%= f.label :is_good,'Field Goal Good?' %>
-  </div>
-  <div class="actions">
-    <%= f.submit 'Submit', :class => "button expand" %>
-  </div>
+  <%= f.input :date %>
+  <%= f.input :distance, label: 'Distance (yards)', error: 'Distance is missing.' %>
+  <%= f.input :is_good, label: 'Field Goal Good?' %>
+  <%= f.submit 'Submit', :class => "button expand" %>
 <% end %>

@@ -2,7 +2,7 @@
 	<div class="large-12 columns">
 		<div class="panel">
 			<h1>PAT <small>Submitted</small></h1>
-			<p>The <strong>PAT</strong> you kicked on <%= @kickoff.date %> has been logged.</p>
+			<p>The <strong>PAT</strong> you kicked on <%= @point_after_attempt.date %> has been logged.</p>
 			<%= link_to 'Edit', edit_point_after_attempt_path(@point_after_attempt), :class => "button secondary"  %>
 			<%= link_to 'Back to PAT Stats', point_after_attempts_path, :class => "button secondary"  %>
 		</div>

@@ -1,4 +1,4 @@
-<%= form_for(@punt) do |f| %>
+<%= simple_form_for(@punt) do |f| %>
   <% if @punt.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@punt.errors.count, "error") %> prohibited this punt from being saved:</h2>
@@ -10,20 +10,8 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= f.label :date %>
-    <%= f.date_select :date %>
-  </div>
-  <div>
-    <%= f.label :distance, "Distance (yards)" %>
-    <%= f.number_field :distance %>
-  </div>
-  <div>
-    <%= f.label :hangtime, "Hangtime (seconds)" %>
-    <%= f.text_field :hangtime %>
-  </div>
-  <div class="actions">
-    <%= f.submit 'Submit', :class => "button expand" %>
-  </div>
+  <%= f.input :date %>
+  <%= f.input :distance, label: 'Distance (yards)' %>
+  <%= f.input :hangtime, label: 'Hangimte (seconds)' %>
+  <%= f.submit 'Submit', :class => "button expand" %>
 <% end %>

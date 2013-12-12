@@ -1,8 +1,7 @@
-<%= form_for(@kickoff) do |f| %>
+<%= simple_form_for(@kickoff) do |f| %>
   <% if @kickoff.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@kickoff.errors.count, "error") %> prohibited this kickoff from being saved:</h2>
-
       <ul>
       <% @kickoff.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -10,20 +9,8 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= f.label :date %>
-    <%= f.date_select :date %>
-  </div>
-  <div>
-    <%= f.label :distance, "Distance (yards)" %>
-    <%= f.number_field :distance %>
-  </div>
-  <div>
-    <%= f.label :hangtime, "Hangtime (seconds)" %>
-    <%= f.text_field :hangtime %>
-  </div>
-  <div class="actions">
-    <%= f.submit 'Submit', :class => "button expand" %>
-  </div>
+  <%= f.input :date %>
+  <%= f.input :distance, label: "Distance (yards)" %>
+  <%= f.input :hangtime %>
+  <%= f.submit 'Submit', :class => "button expand" %>
 <% end %>
