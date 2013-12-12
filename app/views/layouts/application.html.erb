@@ -8,28 +8,18 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <nav class="top-bar contain-to-grid" data-topbar>
-      <ul class="title-area">
-        <li class="name">
-          <h1><a href="/">Kicker's Name</a></h1>
-        </li>
-      </ul>
-      <section class="top-bar-section">
-        <ul class="left">
+    <div class="off-canvas-wrap">
+      <div class="inner-wrap">
+      
+      <aside class="left-off-canvas-menu">
+        <ul class="off-canvas-list">
           <li><%= link_to "Home", static_pages_home_path %></li>
           <li><%= link_to "Bio", static_pages_bio_path %></li>
           <li><%= link_to "Highlights", highlights_path %></li>
-          <li class="has-dropdown">
-            <a href="#">Stats</a>
-            <ul class="dropdown">
-              <li><%= link_to "Kickoffs", kickoffs_path %></li>
-              <li><%= link_to "Field Goals", field_goals_path %></li>
-              <li><%= link_to "PAT's", point_after_attempts_path %></li>
-              <li><%= link_to "Punts", punts_path %></li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="right">
+          <li><%= link_to "Kickoffs", kickoffs_path %></li>
+          <li><%= link_to "Field Goals", field_goals_path %></li>
+          <li><%= link_to "PAT's", point_after_attempts_path %></li>
+          <li><%= link_to "Punts", punts_path %></li>
           <% if user_signed_in? %>
             <li><%= link_to "Admin", static_pages_admin_path %></li>
             <li><%= link_to "Log Out", logout_path %></li>  
@@ -38,11 +28,54 @@
             <li><%= link_to "Register", register_path %></li>
           <% end %>
         </ul>
-      </section>
-    </nav>
+      </aside>
+
+
+
+      <nav class="tab-bar show-for-small">
+        <a class="left-off-canvas-toggle menu-icon">
+          <span>Kicker</span>
+        </a>
+      </nav>
+      <nav class="top-bar hide-for-small" data-topbar>
+           <ul class="title-area">
+             <li class="name">
+               <h1><a href="/">Kicker's Name</a></h1>
+             </li>
+           </ul>
+           <section class="top-bar-section">
+             <ul class="left">
+               <li><%= link_to "Home", static_pages_home_path %></li>
+               <li><%= link_to "Bio", static_pages_bio_path %></li>
+               <li><%= link_to "Highlights", highlights_path %></li>
+               <li class="has-dropdown">
+                 <a href="#">Stats</a>
+                 <ul class="dropdown">
+                   <li><%= link_to "Kickoffs", kickoffs_path %></li>
+                   <li><%= link_to "Field Goals", field_goals_path %></li>
+                   <li><%= link_to "PAT's", point_after_attempts_path %></li>
+                   <li><%= link_to "Punts", punts_path %></li>
+                 </ul>
+               </li>
+             </ul>
+             <ul class="right">
+               <% if user_signed_in? %>
+                 <li><%= link_to "Admin", static_pages_admin_path %></li>
+                 <li><%= link_to "Log Out", logout_path %></li>  
+                 <% else %>
+                 <li><%= link_to "Log in", login_path %></li>
+                 <li><%= link_to "Register", register_path %></li>
+               <% end %>
+             </ul>
+           </section>
+         </nav>
+
+ 
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    </div>
+    </div>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
