@@ -20,8 +20,8 @@ class StaticPagesController < ApplicationController
     @touchback_percentage = (@touchback_totals.to_f / @total_kicks.to_f * 100).round(1)
 
     @hangtime_totals = Kickoff.sum('hangtime')
-
-    @average_hangtime = (@hangtime_totals.to_f / @total_kicks.to_f)
+    @hangtime_count = Kickoff.count('hangtime')
+    @average_hangtime = (@hangtime_totals.to_f / @hangtime_count.to_f).round(1)
 
 
     @punts = Punt.all
