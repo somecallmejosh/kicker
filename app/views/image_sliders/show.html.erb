@@ -1,0 +1,11 @@
+<div class="row">
+	<div class="large-12 columns">
+		<div class="panel">
+			<h1>Image <small>Submitted</small></h1>
+			<img src="<%= @image_slider.image_link %>" class="img-responsive">
+			<p>The image you submitted has been added.</p>
+			<%= link_to 'Edit', edit_image_slider_path(@image_slider), :class => "button secondary" %>
+		<%= link_to 'Back to Image Sliders', image_sliders_path, :class => "button secondary" %>
+		</div>
+	</div>
+</div>

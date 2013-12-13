@@ -1,0 +1,17 @@
+<% if user_signed_in? %>
+<%= simple_form_for(@image_slider) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :image_link %>
+    <%= f.input :alt_tag %>
+    <%= f.input :caption %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, value: 'Submit Image', :class=>"button expand" %>
+  </div>
+<% end %>
+<% else %>
+<p class="label alert">You must be logged in to add or edit Slider Images.</p>
+<% end %>

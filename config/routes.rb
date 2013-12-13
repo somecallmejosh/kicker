@@ -1,4 +1,7 @@
 Kicker::Application.routes.draw do
+  resources :image_sliders
+
+
   devise_for :users
 
   get "static_pages/home"

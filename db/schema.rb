@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131212172334) do
+ActiveRecord::Schema.define(:version => 20131213143015) do
 
   create_table "field_goals", :force => true do |t|
     t.date     "date"
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(:version => 20131212172334) do
     t.string   "opponent"
     t.string   "link"
     t.text     "comments"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "image_sliders", :force => true do |t|
+    t.string   "image_link"
+    t.string   "alt_tag"
+    t.string   "caption"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

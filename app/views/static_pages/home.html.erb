@@ -1,17 +1,13 @@
 <div class="hide-for-small-only">
 	<ul class="example-orbit" data-orbit>
-		<li>
-		  <img src="https://dl.dropboxusercontent.com/u/39806773/kicker/2.jpg" alt="slide 1" />
-		  <div class="orbit-caption">
-		    200+ High School Career Points
-		  </div>
-		</li>
-		<li>
-		  <img src="https://dl.dropboxusercontent.com/u/39806773/kicker/1.jpg" alt="slide 2" />
-		  <div class="orbit-caption">
-		    All Conference, All State
-		  </div>
-		</li>
+		<% @image_sliders.each do |image_slider| %>
+			<li>
+			  <img src="<%= image_slider.image_link %>" class="img-responsive" alt="<%= image_slider.alt_tag %>">
+			  <div class="orbit-caption">
+			    <%= image_slider.caption %>
+			  </div>
+			</li>
+		<% end %>
 	</ul>
 </div>
 <div class="show-for-small-only">
