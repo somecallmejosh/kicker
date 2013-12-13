@@ -102,6 +102,16 @@
         
       </div>
     </div>
+    <footer>
+      <div class="row">
+        <div class="large-6 columns">
+          <%= link_to "Home", static_pages_home_path %> | <%= link_to "Bio", static_pages_bio_path %> | <%= link_to "Highlights", highlights_path %>
+        </div>
+        <div class="large-6 columns text-right">
+          &copy;<%= Time.now.year %> Kicker Name. All rights reserved.
+        </div>
+      </div>
+    </footer>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
