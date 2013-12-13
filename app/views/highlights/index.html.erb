@@ -15,7 +15,7 @@
     <li>
       <%= link_to image_tag("http://img.youtube.com/vi/#{highlight.link}/0.jpg", :class => "img-responsive"), highlight  %>
       <h3><%= highlight.title %></h3>
-      <small><%= highlight.date %> vs. <%= highlight.opponent %></small>
+      <small><%= l(highlight.date) %> vs. <%= highlight.opponent %></small>
       <p><%= highlight.comments %></p>
 
       <div class="text-center">

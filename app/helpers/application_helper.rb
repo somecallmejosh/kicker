@@ -11,4 +11,9 @@ module ApplicationHelper
 		end
 	end
 
+
+	def l_or_none(object)
+	  l(object) rescue ''
+	end 
+	
 end

@@ -3,3 +3,17 @@
 
 en:
   hello: "Hello world"
+  ## this sets the dates to display properly
+  date:
+      order:
+        - :month
+        - :day
+        - :year
+      formats:
+          default: "%m/%d/%Y"
+          short: "%m/%d"
+  datetime:
+    formats:
+      default: "%m/%d/%Y %H:%M"
+      short: "%H:%M"
+      notime: "%m/%d/%Y"

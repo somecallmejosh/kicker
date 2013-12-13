@@ -43,7 +43,7 @@
       <tbody>
         <% @kickoffs.each do |kickoff| %>
           <tr>
-            <td><%= kickoff.date %></td>
+            <td><%= l(kickoff.date)  %></td>
             <td><%= kickoff.distance %></td>
             <td><%= kickoff.hangtime %></td>
             <% if user_signed_in? %>

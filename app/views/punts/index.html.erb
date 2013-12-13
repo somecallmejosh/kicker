@@ -37,7 +37,7 @@
     <tbody>
       <% @punts.each do |punt| %>
         <tr>
-          <td><%= punt.date %></td>
+          <td><%= l(punt.date) %></td>
           <td><%= punt.distance %></td>
           <td><%= punt.hangtime %></td>
           <% if user_signed_in? %>

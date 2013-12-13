@@ -45,7 +45,7 @@
       <tbody>
         <% @field_goals.each do |field_goal| %>
         <tr>
-          <td><%= field_goal.date %></td>
+          <td><%= l(field_goal.date) %></td>
           <td><%= field_goal.distance %></td>
           <td><%= field_goal.is_good  ? 'Yes' : 'No' %></td>
           <% if user_signed_in? %>

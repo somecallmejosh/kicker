@@ -37,7 +37,7 @@
       <tbody>
         <% @point_after_attempts.each do |point_after_attempt| %>
       <tr>
-        <td><%= point_after_attempt.date %></td>
+        <td><%= l(point_after_attempt.date) %></td>
         <td><%= point_after_attempt.is_good ? 'Yes' : 'No'  %></td>
         <% if user_signed_in? %>
           <td><%= link_to 'Edit', edit_point_after_attempt_path(point_after_attempt), :class => "button secondary tiny"  %></td>
