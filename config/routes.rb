@@ -1,11 +1,13 @@
 Kicker::Application.routes.draw do
+  resources :bios
+
+
   resources :image_sliders
 
 
   devise_for :users
 
   get "static_pages/home"
-  get "static_pages/bio"
   get "static_pages/admin"
   resources :point_after_attempts
 

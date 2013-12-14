@@ -21,9 +21,9 @@
             </ul>
           <% end %>
           <ul class="off-canvas-list">
-            <li><label class="first">Kicker's Name</label></li>
+            <li><label class="first"><%= kicker_name %></label></li>
             <li><%= link_to "Home", static_pages_home_path %></li>
-            <li><%= link_to "Bio", static_pages_bio_path %></li>
+            <li><%= link_to "Bio", bios_path %></li>
             <li><%= link_to "Highlights", highlights_path %></li>
           </ul>
           <ul class="off-canvas-list">
@@ -46,19 +46,19 @@
         </aside>
         <nav class="tab-bar show-for-small">
           <a class="left-off-canvas-toggle menu-icon">
-            <span>Kicker&nbsp;Name</span>
+            <span><%= kicker_name %></span>
           </a>
         </nav>
         <nav class="top-bar hide-for-small" data-topbar>
           <ul class="title-area">
             <li class="name">
-              <h1><a href="/">Kicker's Name</a></h1>
+              <h1><a href="/"><%= kicker_name %></a></h1>
             </li>
           </ul>
           <section class="top-bar-section">
             <ul class="left">
               <li><%= link_to "Home", static_pages_home_path %></li>
-              <li><%= link_to "Bio", static_pages_bio_path %></li>
+              <li><%= link_to "Bio", bios_path %></li>
               <li><%= link_to "Highlights", highlights_path %></li>
               <li class="has-dropdown">
                 <a href="#">Stats</a>
@@ -105,10 +105,10 @@
     <footer>
       <div class="row">
         <div class="large-6 columns">
-          <%= link_to "Home", static_pages_home_path %> | <%= link_to "Bio", static_pages_bio_path %> | <%= link_to "Highlights", highlights_path %>
+          <%= link_to "Home", static_pages_home_path %> | <%= link_to "Bio", bios_path %> | <%= link_to "Highlights", highlights_path %>
         </div>
         <div class="large-6 columns text-right">
-          &copy;<%= Time.now.year %> Kicker Name. All rights reserved.
+          &copy;<%= Time.now.year %> <%= kicker_name %>. All rights reserved.
         </div>
       </div>
     </footer>

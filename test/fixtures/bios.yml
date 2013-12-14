@@ -1,0 +1,63 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  phone: MyString
+  bio_content: MyText
+  graduation_year: MyString
+  height: MyString
+  weight: MyString
+  sprint_40_time: MyString
+  vertical_jump: MyString
+  bench_press: MyString
+  squat: MyString
+  GPA: MyString
+  SAT_score: MyString
+  ACT_score: MyString
+  college_credits_earned: MyString
+  image_link: MyString
+  school_name: MyString
+  school_url: MyString
+  school_street: MyString
+  school_city: MyString
+  school_state: MyString
+  school_zip: MyString
+  team_head_coach: MyString
+  team_head_coach_phone: MyString
+  team_head_coach_email: MyString
+  team_special_teams_coach: MyString
+  primary_kicking_coach: MyString
+  clearing_house_cleared: false
+
+two:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  phone: MyString
+  bio_content: MyText
+  graduation_year: MyString
+  height: MyString
+  weight: MyString
+  sprint_40_time: MyString
+  vertical_jump: MyString
+  bench_press: MyString
+  squat: MyString
+  GPA: MyString
+  SAT_score: MyString
+  ACT_score: MyString
+  college_credits_earned: MyString
+  image_link: MyString
+  school_name: MyString
+  school_url: MyString
+  school_street: MyString
+  school_city: MyString
+  school_state: MyString
+  school_zip: MyString
+  team_head_coach: MyString
+  team_head_coach_phone: MyString
+  team_head_coach_email: MyString
+  team_special_teams_coach: MyString
+  primary_kicking_coach: MyString
+  clearing_house_cleared: false

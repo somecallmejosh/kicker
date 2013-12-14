@@ -29,9 +29,6 @@ class StaticPagesController < ApplicationController
 
     @image_sliders = ImageSlider.all
   end
-  def bio
-
-  end
   def admin
 
   end

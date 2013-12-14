@@ -1,0 +1,136 @@
+<% @bios.each do |bio| %>
+    <div class="row">
+        <div class="large-6 columns">
+            <h1><%= bio.first_name %> <%= bio.last_name %> <small>Bio</small></h1>
+        </div>
+        <div class="large-6 columns text-right">
+            <a href="mailto:<%= bio.email %>" class="button">Email <%= bio.first_name %></a>
+            <a href="tel:<%= bio.phone %>" class="button"><%= bio.phone %></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-5 columns">
+            <img src="<%= bio.image_link %>" class="img-responsive">
+        </div>
+        <div class="large-7 columns">
+            <h3 class="subheader"><%= bio.first_name %> <%= bio.last_name %> <small>Academic Info</small></h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GPA</td>
+                        <td><%= bio.GPA %></td>
+                    </tr>
+                    <tr>
+                        <td>ACT</td>
+                        <td><%= bio.ACT_score %></td>
+                    </tr>
+                    <tr>
+                        <td>Graduation Year</td>
+                        <td><%= bio.graduation_year %></td>
+                    </tr>
+                    <tr>
+                        <td>SAT</td>
+                        <td><%= bio.SAT_score %></td>
+                    </tr>
+                    <tr>
+                        <td>College Credits</td>
+                        <td><%= bio.college_credits_earned %></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="panel">
+                <%= bio.bio_content %>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <h2>Physical</h2>
+        </div>
+        <div class="large-12 columns">
+            <ul class="large-block-grid-3">
+                <li class="text-center">
+                    <div class="panel">
+                        <h4>Height</h4>
+                        <p><%= bio.height %>"</p>
+                    </div>
+                </li>
+                <li class="text-center">
+                    <div class="panel">
+                        <h4>Weight</h4>
+                        <p><%= bio.weight %>lbs.</p>
+                    </div>
+                </li>
+                <li class="text-center">
+                    <div class="panel">
+                        <h4>40yd Dash</h4>
+                        <p><%= bio.sprint_40_time %>secs</p>
+                    </div>
+                </li>
+                <li class="text-center">
+                    <div class="panel">
+                        <h4>Vertical Jump</h4>
+                        <p><%= bio.vertical_jump %>"</p>
+                    </div>
+                </li>
+                <li class="text-center">
+                    <div class="panel">
+                        <h4>Bench Press</h4>
+                        <p><%= bio.bench_press %>lbs.</p>
+                    </div>
+                </li>
+                <li class="text-center">
+                    <div class="panel">
+                        <h4>Squat</h4>
+                        <p><%= bio.squat %>lbs.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-4 columns">
+            <h2>School Info</h2>
+            <ul class="vcard">
+                <li class="fn"><%= bio.school_name %></li>
+                <li class="street-address"><%= bio.school_street %></li>
+                <li class="locality"><%= bio.school_city %></li>
+                <li><span class="state"><%= bio.school_state %></span>, <span class="zip"><%= bio.school_zip %></span></li>
+                <li class="url"><a href="<%= bio.school_url %>">Website</a></li>
+            </ul>
+        </div>
+        <div class="large-4 columns">
+            <h2>Head Coach</h2>
+            <ul class="vcard">
+                <li class="fn"><%= bio.team_head_coach %></li>
+                <li class="phone"><%= bio.team_head_coach_phone %></li>
+                <li class="email"><a href="mailto:<%= bio.team_head_coach_email %>">Email</a></li>
+            </ul>
+        </div>
+        <div class="large-4 columns">
+            <h3>Additional Coaches</h3>
+            <ul>
+                <li><strong>Special Teams Coach:</strong> <%= bio.team_special_teams_coach %></li>
+                <li><strong>Primary Kicking Coach:</strong> <%= bio.primary_kicking_coach %></li>
+            </ul>
+        </div>
+    </div>
+    <% if user_signed_in? %>
+        <div class="row">
+            <div class="large-12 columns">
+                <%= link_to 'Edit', edit_bio_path(bio), :class => "button"  %>
+            </div>
+        </div>
+    <% end %>
+<% end %>
+
