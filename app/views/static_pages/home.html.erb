@@ -11,7 +11,9 @@
 	</ul>
 </div>
 <div class="show-for-small-only">
-	<img src="https://dl.dropboxusercontent.com/u/39806773/kicker/chase-bio-pic.jpg" class="img-responsive">
+	<% @bios.each do |bio| %>
+		<img src="<%= bio.image_link %>" class="img-responsive">
+	<% end %>
 </div>
 <div class="row">
 	<div class="large-12 columns text-center">

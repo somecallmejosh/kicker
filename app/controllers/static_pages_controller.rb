@@ -28,6 +28,8 @@ class StaticPagesController < ApplicationController
     @total_points = Integer(@total_field_goals.to_f + @total_pats.to_f)
 
     @image_sliders = ImageSlider.all
+
+    @bios = Bio.all
   end
   def admin
 
