@@ -54,7 +54,7 @@
           </ul>
           <section class="top-bar-section">
             <ul class="left">
-              <li><%= link_to "Home", static_pages_home_path %></li>
+              <li><%= link_to "Home", root_path %></li>
               <li><%= link_to "Bio", bios_path %></li>
               <li><%= link_to "Highlights", highlights_path %></li>
               <li class="has-dropdown">
@@ -99,7 +99,7 @@
     <footer>
       <div class="row">
         <div class="large-6 columns">
-          <%= link_to "Home", static_pages_home_path %> | <%= link_to "Bio", bios_path %> | <%= link_to "Highlights", highlights_path %>
+          <%= link_to "Home", root_path %> | <%= link_to "Bio", bios_path %> | <%= link_to "Highlights", highlights_path %>
         </div>
         <div class="large-6 columns text-right">
           &copy;<%= Time.now.year %> <%= kicker_name %>. All rights reserved.
