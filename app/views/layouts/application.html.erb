@@ -14,30 +14,30 @@
           <% if user_signed_in? %>
             <ul class="off-canvas-list">
               <li><label class="first">Quick Add</label></li>
-              <li><%= link_to "Add Kickoff", new_kickoff_path %></li>
-              <li><%= link_to "Add Field Goal", new_field_goal_path %></li>
-              <li><%= link_to "Add PAT", new_point_after_attempt_path %></li>
-              <li><%= link_to "Add Punt", new_punt_path %></li>
+              <li><%= nav_link "Add Kickoff", new_kickoff_path %></li>
+              <li><%= nav_link "Add Field Goal", new_field_goal_path %></li>
+              <li><%= nav_link "Add PAT", new_point_after_attempt_path %></li>
+              <li><%= nav_link "Add Punt", new_punt_path %></li>
             </ul>
           <% end %>
           <ul class="off-canvas-list">
             <li><label class="first"><%= kicker_name %></label></li>
-            <li><%= link_to "Home", static_pages_home_path %></li>
-            <li><%= link_to "Bio", bios_path %></li>
-            <li><%= link_to "Highlights", highlights_path %></li>
+            <li><%= nav_link "Home", static_pages_home_path %></li>
+            <li><%= nav_link "Bio", bios_path %></li>
+            <li><%= nav_link "Highlights", highlights_path %></li>
           </ul>
           <ul class="off-canvas-list">
             <li><label class="first">Stats</label></li>
-            <li><%= link_to "Kickoffs", kickoffs_path %></li>
-            <li><%= link_to "Field Goals", field_goals_path %></li>
-            <li><%= link_to "PAT's", point_after_attempts_path %></li>
-            <li><%= link_to "Punts", punts_path %></li>
+            <li><%= nav_link "Kickoffs", kickoffs_path %></li>
+            <li><%= nav_link "Field Goals", field_goals_path %></li>
+            <li><%= nav_link "PAT's", point_after_attempts_path %></li>
+            <li><%= nav_link "Punts", punts_path %></li>
           </ul>
           <ul class="off-canvas-list">
             <li><label class="first">Action Center</label></li>
             <% if user_signed_in? %>
-              <li><%= link_to "Admin", static_pages_admin_path %></li>
-              <li><%= link_to "Log Out", logout_path %></li>  
+              <li><%= nav_link "Admin", static_pages_admin_path %></li>
+              <li><%= nav_link "Log Out", logout_path %></li>  
             <% end %>
           </ul>
         </aside>
@@ -54,34 +54,34 @@
           </ul>
           <section class="top-bar-section">
             <ul class="left">
-              <li><%= link_to "Home", root_path %></li>
-              <li><%= link_to "Bio", bios_path %></li>
-              <li><%= link_to "Highlights", highlights_path %></li>
+              <li><%= nav_link "Home", root_path %></li>
+              <li><%= nav_link "Bio", bios_path %></li>
+              <li><%= nav_link "Highlights", highlights_path %></li>
               <li class="has-dropdown">
                 <a href="#">Stats</a>
                 <ul class="dropdown">
-                  <li><%= link_to "Kickoffs", kickoffs_path %></li>
-                  <li><%= link_to "Field Goals", field_goals_path %></li>
-                  <li><%= link_to "PAT's", point_after_attempts_path %></li>
-                  <li><%= link_to "Punts", punts_path %></li>
+                  <li><%= nav_link "Kickoffs", kickoffs_path %></li>
+                  <li><%= nav_link "Field Goals", field_goals_path %></li>
+                  <li><%= nav_link "PAT's", point_after_attempts_path %></li>
+                  <li><%= nav_link "Punts", punts_path %></li>
                 </ul>
               </li>
               <% if user_signed_in? %>
              <li class="has-dropdown">
                <a href="#">Add Kicks</a>
                <ul class="dropdown">
-                 <li><%= link_to "Add Kickoff", new_kickoff_path %></li>
-                 <li><%= link_to "Add Field Goal", new_field_goal_path %></li>
-                 <li><%= link_to "Add PAT", new_point_after_attempt_path %></li>
-                 <li><%= link_to "Add Punt", new_punt_path %></li>
+                 <li><%= nav_link "Add Kickoff", new_kickoff_path %></li>
+                 <li><%= nav_link "Add Field Goal", new_field_goal_path %></li>
+                 <li><%= nav_link "Add PAT", new_point_after_attempt_path %></li>
+                 <li><%= nav_link "Add Punt", new_punt_path %></li>
                </ul>
              </li>
               <% end %>
             </ul>
             <ul class="right">
               <% if user_signed_in? %>
-                <li><%= link_to "Admin", static_pages_admin_path %></li>
-                <li><%= link_to "Log Out", logout_path %></li>  
+                <li><%= nav_link "Admin", static_pages_admin_path %></li>
+                <li><%= nav_link "Log Out", logout_path %></li>  
               <% end %>
             </ul>
           </section>
@@ -99,10 +99,10 @@
     <footer>
       <div class="row">
         <div class="large-6 columns">
-          <%= link_to "Home", root_path %> | <%= link_to "Bio", bios_path %> | <%= link_to "Highlights", highlights_path %>
+          <p><%= link_to "Home", root_path %> | <%= link_to "Bio", bios_path %> | <%= link_to "Highlights", highlights_path %></p>
         </div>
         <div class="large-6 columns text-right">
-          &copy;<%= Time.now.year %> <%= kicker_name %>. All rights reserved.
+          <p>&copy;<%= Time.now.year %> <%= kicker_name %>. All rights reserved.</p>
         </div>
       </div>
     </footer>
