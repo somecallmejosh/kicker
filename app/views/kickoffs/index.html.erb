@@ -1,11 +1,11 @@
 <% provide(:title, kicker_name + " | Kickoff Stats") %>
 <div class="row">
-  <div class="large-6 columns">
+  <div class="large-10 medium-10 columns">
     <h1>Kickoff <small>Stats</small></h1>
   </div>
-  <div class="large-6 columns text-right">
+  <div class="large-2 medium-2 columns">
     <% if user_signed_in? %>
-      <%= link_to 'New Kickoff', new_kickoff_path, :class => "button secondary tiny" %>
+      <%= link_to 'New Kickoff', new_kickoff_path, :class => "button expand" %>
     <% end %>
   </div>
 </div>

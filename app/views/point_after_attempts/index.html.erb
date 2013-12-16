@@ -1,11 +1,11 @@
 <% provide(:title, kicker_name + " | PAT Stats") %>
 <div class="row">
-  <div class="large-6 columns">
+  <div class="large-10 medium-10 columns">
     <h1>PAT <small>Stats</small></h1>
   </div>
-  <div class="large-6 columns text-right">
+  <div class="large-2 medium-2 columns">
     <% if user_signed_in? %>
-      <%= link_to 'New PAT', new_point_after_attempt_path, :class => "button secondary tiny" %>
+      <%= link_to 'New PAT', new_point_after_attempt_path, :class => "button expand" %>
     <% end %>
   </div>
 </div>
