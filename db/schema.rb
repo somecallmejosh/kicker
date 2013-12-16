@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131216201622) do
+ActiveRecord::Schema.define(:version => 20131216205157) do
 
   create_table "bios", :force => true do |t|
     t.string   "first_name"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20131216201622) do
     t.string   "school_counselor_name"
     t.string   "school_counselor_email"
     t.string   "school_counselor_phone"
+    t.string   "school_fax"
   end
 
   create_table "field_goals", :force => true do |t|

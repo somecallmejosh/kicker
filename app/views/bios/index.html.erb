@@ -107,14 +107,15 @@
             <div class="panel">
                 <div class="row">
                     <div class="large-4 columns">
-                        <div class="fn"><%= bio.school_name %></div>
+                        <div class="fn"><strong><%= bio.school_name %></strong></div>
                         <div class="street-address"><%= bio.school_street %></div>
                         <div>
                             <span class="locality"><%= bio.school_city %></span>, <span class="state"><%= bio.school_state %></span>, <span class="zip"><%= bio.school_zip %></span>
                         </div>
                     </div>
                     <div class="large-6 columns">
-                        <strong>Phone:</strong> <a href="tel:<%= bio.school_phone %>"><%= bio.school_phone %></a>
+                        <strong>Phone:</strong> <a href="tel:<%= bio.school_phone %>"><%= bio.school_phone %></a><br>
+                        <strong>Fax:</strong> <%= bio.school_fax %>
                     </div>
                     <div class="large-2 columns">
                         <a href="<%= bio.school_url %>" class="button expand">Website</a>
