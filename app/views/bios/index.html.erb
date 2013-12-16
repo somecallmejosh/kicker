@@ -104,28 +104,38 @@
     <div class="row">
         <div class="large-4 columns">
             <h2>School Info</h2>
-            <ul class="vcard">
-                <li class="fn"><%= bio.school_name %></li>
-                <li class="street-address"><%= bio.school_street %></li>
-                <li class="locality"><%= bio.school_city %></li>
-                <li><span class="state"><%= bio.school_state %></span>, <span class="zip"><%= bio.school_zip %></span></li>
-                <li class="url"><a href="<%= bio.school_url %>" class="button expand">Website</a></li>
-            </ul>
+            <div class="panel">
+                <div class="fn"><%= bio.school_name %></div>
+                <div class="street-address"><%= bio.school_street %></div>
+                <div>
+                    <span class="locality"><%= bio.school_city %></span>, <span class="state"><%= bio.school_state %></span>, <span class="zip"><%= bio.school_zip %></span>
+                </div>
+                <div>
+                    <a href="<%= bio.school_url %>">Website</a>
+                </div>
+            </div>
         </div>
-        <div class="large-4 columns">
-            <h2>Head Coach</h2>
-            <ul class="vcard">
-                <li class="fn">Coach <%= bio.team_head_coach %></li>
-                <li class="phone"><a href="tel:<%= bio.team_head_coach_phone %>" class="button expand"><%= bio.team_head_coach_phone %></a></li>
-                <li class="email"><a href="mailto:<%= bio.team_head_coach_email %>" class="button expand">Email</a></li>
-            </ul>
-        </div>
-        <div class="large-4 columns">
-            <h3>Additional Coaches</h3>
-            <ul>
-                <li><strong>Special Teams Coach:</strong> <%= bio.team_special_teams_coach %></li>
-                <li><strong>Primary Kicking Coach:</strong> <%= bio.primary_kicking_coach %></li>
-            </ul>
+        <div class="large-8 columns">
+            <h2>Coaches</h2>
+            <div class="panel">
+                <div class="row">
+                    <div class="large-4 columns">
+                        <h3>Head Coach:</h3> 
+                         <%= bio.team_head_coach %>
+                         <p><a href="tel:<%= bio.team_head_coach_phone %>"><%= bio.team_head_coach_phone %></a> | <a href="mailto:<%= bio.team_head_coach_email %>">Email</a></p>
+                    </div>
+                    <div class="large-4 columns">
+                        <h3>Kicking Coach:</h3> <%= bio.primary_kicking_coach %>
+                        <p><a href="tel:<%= bio.team_head_coach_phone %>"><%= bio.team_head_coach_phone %></a> | <a href="mailto:<%= bio.team_head_coach_email %>">Email</a></p>
+                    </div>
+                    <div class="large-4 columns">
+                        <h3>Special Teams:</h3> <%= bio.team_special_teams_coach %>
+                        <p><a href="tel:<%= bio.team_head_coach_phone %>"><%= bio.team_head_coach_phone %></a> | <a href="mailto:<%= bio.team_head_coach_email %>">Email</a></p>
+                    </div>
+                </div>
+
+                
+            </div>
         </div>
     </div>
     <% if user_signed_in? %>
