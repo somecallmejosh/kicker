@@ -4,9 +4,9 @@
 
     <dl class="tabs" data-tab>
       <dd class="active"><a href="#panel2-1">Personal Info</a></dd>
-      <dd><a href="#panel2-2">Physical</a></dd>
-      <dd><a href="#panel2-3">Academics</a></dd>
-      <dd><a href="#panel2-4">Team Info</a></dd>
+      <dd><a href="#panel2-2">Physical / Strength</a></dd>
+      <dd><a href="#panel2-3">School &amp; Academics</a></dd>
+      <dd><a href="#panel2-4">Coaches Info</a></dd>
     </dl>
     <div class="tabs-content">
       <div class="content active" id="panel2-1">
@@ -40,23 +40,50 @@
             <div class="large-3 columns"><%= f.input :ACT_score, label: "ACT Score" %></div>
             <div class="large-3 columns"><%= f.input :college_credits_earned %></div>
             <div class="large-12 columns"><%= f.input :clearing_house_cleared, label: "Clearing house cleared?" %></div>
-            <div class="large-12 columns"><h3>School Information / Location</h3></div>
-            <div class="large-6 columns"><%= f.input :school_name %></div>
-            <div class="large-6 columns"><%= f.input :school_url, label: "School website (http://www.yourschool.com)" %></div>
+            <div class="large-12 columns"><h2>School Information / Location</h2></div>
+            <div class="large-4 columns"><%= f.input :school_name %></div>
+            <div class="large-4 columns"><%= f.input :school_phone %></div>
+            <div class="large-4 columns"><%= f.input :school_url %></div>
             <div class="large-4 columns"><%= f.input :school_street, label: "Street" %></div>
             <div class="large-4 columns"><%= f.input :school_city , label: "City" %></div>
             <div class="large-2 columns"><%= f.input :school_state, label: "State" %></div>
             <div class="large-2 columns"><%= f.input :school_zip, label: "Zip" %></div>
+            <div class="large-12 columns">
+              <h3>Academic Counselor</h3>
+            </div>
+            <div class="large-4 columns"><%= f.input :school_counselor_name %></div>
+            <div class="large-4 columns"><%= f.input :school_counselor_phone %></div>
+            <div class="large-4 columns"><%= f.input :school_counselor_email %></div>
         </div> 
       </div>
       <div class="content" id="panel2-4">
-        <div class="large-12 columns"><h2>Team Information</h2></div>
-        <div class="large-4 columns"><%= f.input :team_head_coach %></div>
-        <div class="large-4 columns"><%= f.input :team_head_coach_phone %></div>
-        <div class="large-4 columns"><%= f.input :team_head_coach_email %></div>
-        <div class="large-6 columns"><%= f.input :team_special_teams_coach %></div>
-        <div class="large-6 columns"><%= f.input :primary_kicking_coach %></div>
-        
+        <div class="row">
+          <div class="large-12 columns"><h2>Coaches</h2></div>
+          <div class="large-4 columns">
+            <div class="panel">
+              <h3>Head Coach</h3>
+              <%= f.input :team_head_coach, label: "Full Name" %>
+              <%= f.input :team_head_coach_phone, label: "Phone Number" %>
+              <%= f.input :team_head_coach_email, label: "Email" %>
+            </div>
+          </div>
+          <div class="large-4 columns">
+            <div class="panel">
+              <h3>Special Teams Coach</h3>
+              <%= f.input :team_special_teams_coach, label: "Full Name" %>
+              <%= f.input :team_special_teams_coach_phone, label: "Phone Number" %>
+              <%= f.input :team_special_teams_coach_email, label: "Email" %>
+            </div>
+          </div>
+          <div class="large-4 columns">
+            <div class="panel">
+              <h3>Kicking Coach</h3>
+              <%= f.input :primary_kicking_coach, label: "Full Name" %>
+              <%= f.input :primary_kicking_coach_phone, label: "Phone Number" %>
+              <%= f.input :primary_kicking_coach_email, label: "Email" %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 

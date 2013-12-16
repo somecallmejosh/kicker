@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131214175641) do
+ActiveRecord::Schema.define(:version => 20131216201622) do
 
   create_table "bios", :force => true do |t|
     t.string   "first_name"
@@ -43,8 +43,16 @@ ActiveRecord::Schema.define(:version => 20131214175641) do
     t.string   "team_special_teams_coach"
     t.string   "primary_kicking_coach"
     t.boolean  "clearing_house_cleared"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.string   "primary_kicking_coach_email"
+    t.string   "primary_kicking_coach_phone"
+    t.string   "team_special_teams_coach_phone"
+    t.string   "team_special_teams_coach_email"
+    t.string   "school_phone"
+    t.string   "school_counselor_name"
+    t.string   "school_counselor_email"
+    t.string   "school_counselor_phone"
   end
 
   create_table "field_goals", :force => true do |t|
