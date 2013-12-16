@@ -1,12 +1,14 @@
 <% provide(:title, kicker_name + " | Bio") %>
 <% @bios.each do |bio| %>
     <div class="row">
-        <div class="large-6 columns">
+        <div class="large-8 medium-8 columns">
             <h1><%= bio.first_name %> <%= bio.last_name %> <small>Bio</small></h1>
         </div>
-        <div class="large-6 columns text-right">
-            <a href="mailto:<%= bio.email %>" class="button">Email <%= bio.first_name %></a>
-            <a href="tel:<%= bio.phone %>" class="button"><%= bio.phone %></a>
+        <div class="large-2 medium-2 columns">
+            <a href="mailto:<%= bio.email %>" class="button expand">Email <%= bio.first_name %></a>
+        </div>
+        <div class="large-2 medium-2 columns">
+            <a href="tel:<%= bio.phone %>" class="button expand"><%= bio.phone %></a>
         </div>
     </div>
     <div class="row">

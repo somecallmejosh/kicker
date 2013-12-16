@@ -1,10 +1,12 @@
 <div class="row">
-	<div class="large-6 columns">
+	<div class="large-8 medium-8 columns">
 		<h1><%= @highlight.title %></h1>
 	</div>
-	<div class="large-6 columns text-right">
-		<%= link_to("Previous", @highlight.previous_highlight, :class => "button") if @highlight.previous_highlight %>
-		<%= link_to("Next", @highlight.next_highlight, :class => "button") if @highlight.next_highlight %>
+	<div class="large-2 medium-2 small-6 columns">
+		<%= link_to("Previous", @highlight.previous_highlight, :class => "button expand") if @highlight.previous_highlight %>
+	</div>
+	<div class="large-2 medium-2 small-6 columns">
+		<%= link_to("Next", @highlight.next_highlight, :class => "button expand") if @highlight.next_highlight %>
 	</div>
 </div>
 <div class="row">
