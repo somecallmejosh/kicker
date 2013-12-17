@@ -2,7 +2,7 @@ class FieldGoalsController < ApplicationController
   # GET /field_goals
   # GET /field_goals.json
   def index
-    @field_goals = FieldGoal.all
+    @field_goals = FieldGoal.order(:date)
     @totalpoints = FieldGoal.count(:conditions => { :is_good => true }) * 3
     @max_distance = FieldGoal.maximum('distance', :conditions => {:is_good => true})
 

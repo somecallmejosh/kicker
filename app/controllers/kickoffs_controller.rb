@@ -2,7 +2,7 @@ class KickoffsController < ApplicationController
   # GET /kickoffs
   # GET /kickoffs.json
   def index
-    @kickoffs = Kickoff.all
+    @kickoffs = Kickoff.order(:date)
     @total_yards = Kickoff.sum('distance').round(1)
     @count_yards = Kickoff.count('distance').round(1)
     @kickoff_average = (@total_yards / @count_yards).round(1)

@@ -2,7 +2,7 @@ class PointAfterAttemptsController < ApplicationController
   # GET /point_after_attempts
   # GET /point_after_attempts.json
   def index
-    @point_after_attempts = PointAfterAttempt.all
+    @point_after_attempts = PointAfterAttempt.order(:date)
     @totalpoints = PointAfterAttempt.count(:conditions => { :is_good => true })
     @totalkicks = PointAfterAttempt.count('is_good')
     @pat_percent = (@totalpoints.to_f / @totalkicks.to_f * 100).round(1)
