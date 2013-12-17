@@ -115,17 +115,20 @@
                         </div>
                     </div>
                     <div class="large-6 medium-6 columns">
-                        <strong>Phone:</strong> <a href="tel:<%= bio.school_phone %>"><%= bio.school_phone %></a><br>
-                        <strong>Fax:</strong>  <%= bio.school_fax %>
+                        <p>
+                            <strong>Phone:</strong> <a href="tel:<%= bio.school_phone %>"><%= bio.school_phone %></a><br>
+                            <strong>Fax:</strong>  <%= bio.school_fax %>
+                        </p>
                     </div>
                     <div class="large-2 medium-2 columns">
                         <a href="<%= bio.school_url %>" class="button expand">Website</a>
+                        <a href="https://www.google.com/maps/preview#!q=<%= bio.school_street %>%2C+<%= bio.school_city %>%2C+<%= bio.school_state %>" target="_blank" class="button expand show-for-small-only">Directions</a>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row show-for-medium-up">
                     <div class="large-12 columns">
                         <hr>
-                        <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?t=m&amp;q=<%= bio.school_street %>,+<%= bio.school_city %>,+<%= bio.school_state %>&amp;ie=UTF8&amp;hq=&amp;hnear=<%= bio.school_street %>,+<%= bio.school_city %>,+<%= bio.school_state %>+<%= bio.school_zip %>&amp;z=14&amp;output=embed"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x89e653629c38db6d%3A0x929ea2da73fa2973!2s1304+Main+St%2C+Hartford%2C+CT+06103!5e0!3m2!1sen!2sus!4v1387244587724" width="100%" height="200" frameborder="0" style="border:0"></iframe>
                     </div>
                 </div>
             </div>
