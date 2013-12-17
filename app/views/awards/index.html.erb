@@ -18,7 +18,6 @@
         <% if user_signed_in? %>
         <th></th>
         <th></th>
-        <th></th>
         <% end %>
       </tr>
     
@@ -27,7 +26,6 @@
         <td><%= l(award.date) %></td>
         <td><%= award.award_name %></td>
         <% if user_signed_in? %>
-        <td><%= link_to 'Show', award %></td>
         <td><%= link_to 'Edit', edit_award_path(award) %></td>
         <td><%= link_to 'Destroy', award, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>

@@ -1,6 +1,13 @@
-<h1>Editing award</h1>
+<div class="row">
+	<div class="large-6 medium-8 columns medium-centered large-centered">
+		<div class="panel">
+			<h1>Edit <small>Award</small></h1>
+			<%= render 'form' %>
+		</div>
+		<%= link_to 'Show', @award, :class=> "button secondary"  %>
+		<%= link_to 'Back to Bios', bios_path, :class=> "button secondary"  %>
+	</div>
+</div>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @award %> |
-<%= link_to 'Back', awards_path %>
+
