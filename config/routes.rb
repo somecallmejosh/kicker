@@ -1,4 +1,7 @@
 Kicker::Application.routes.draw do
+  resources :awards
+
+
   resources :bios
 
 

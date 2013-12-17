@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="large-10 medium-10 columns">
+    <h1>Awards</h1>
+  </div>
+  <div class="large-2 medium-2 columns">
+    <% if user_signed_in? %>
+    <%= link_to 'New Award', new_award_path, :class => "button expand" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-12 columns">
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Award name</th>
+        <% if user_signed_in? %>
+        <th></th>
+        <th></th>
+        <th></th>
+        <% end %>
+      </tr>
+    
+    <% @awards.each do |award| %>
+      <tr>
+        <td><%= l(award.date) %></td>
+        <td><%= award.award_name %></td>
+        <% if user_signed_in? %>
+        <td><%= link_to 'Show', award %></td>
+        <td><%= link_to 'Edit', edit_award_path(award) %></td>
+        <td><%= link_to 'Destroy', award, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+    </table>
+        <% if user_signed_in? %>
+        <%= link_to 'New Award', new_award_path, :class => "button secondary" %>
+        <% end %>
+  </div>
+</div>
