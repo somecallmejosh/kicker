@@ -2,7 +2,7 @@ class HighlightsController < ApplicationController
   # GET /highlights
   # GET /highlights.json
   def index
-    @highlights = Highlight.all
+    @highlights = Highlight.order('id ASC')
 
     respond_to do |format|
       format.html # index.html.erb
