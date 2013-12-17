@@ -3,11 +3,11 @@ class Highlight < ActiveRecord::Base
   belongs_to :user
 
   def previous_highlight
-    self.class.first(:conditions => ["title < ?", title], :order => "title desc")
+    self.class.first(:conditions => ["id < ?", id], :order => "id desc")
   end
 
   def next_highlight
-    self.class.first(:conditions => ["title > ?", title], :order => "title asc")
+    self.class.first(:conditions => ["id > ?", id], :order => "id asc")
   end
 
   validates :comments, presence: true
