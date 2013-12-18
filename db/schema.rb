@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131217134304) do
+ActiveRecord::Schema.define(:version => 20131217150743) do
 
   create_table "awards", :force => true do |t|
     t.string   "award_name"
@@ -110,6 +110,28 @@ ActiveRecord::Schema.define(:version => 20131217134304) do
     t.string   "hangtime"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "references", :force => true do |t|
+    t.string   "refernce_name"
+    t.string   "reference_title"
+    t.string   "reference_phone"
+    t.string   "reference_email"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "schools", :force => true do |t|
+    t.string   "school_name"
+    t.string   "school_street"
+    t.string   "school_city"
+    t.string   "school_state"
+    t.string   "school_zip"
+    t.string   "school_phone"
+    t.string   "school_fax"
+    t.string   "school_website"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "users", :force => true do |t|
