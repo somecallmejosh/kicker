@@ -1,0 +1,40 @@
+<% if user_signed_in? %>
+<%= simple_form_for(@college_wish_list) do |f| %>
+  <%= f.error_notification %>
+  <div class="row">
+    <div class="large-6 columns">
+      <%= f.input :college_name %>
+    </div>
+    <div class="large-6 columns">
+      <%= f.input :college_main_url %>
+    </div>
+  </div>
+
+
+
+
+  <div class="form-inputs">
+    
+    
+    <%= f.input :college_street_address %>
+    <%= f.input :college_city %>
+    <%= f.input :college_state %>
+    <%= f.input :college_zip %>
+    <%= f.input :major_offered %>
+    <%= f.input :team_url %>
+    <%= f.input :coaching_staff_url %>
+    <%= f.input :mascot %>
+    <%= f.input :head_coach_name %>
+    <%= f.input :head_coach_email %>
+    <%= f.input :special_teams_coach_name %>
+    <%= f.input :special_teams_coach_email %>
+    <%= f.input :comments %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+<% else %>
+<p class="label alert">You must be logged in to add or edit your college wish list.</p>
+<% end %>

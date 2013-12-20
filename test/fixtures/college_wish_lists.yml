@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  college_name: MyString
+  college_main_url: MyString
+  college_street_address: MyString
+  college_city: MyString
+  college_state: MyString
+  college_zip: MyString
+  major_offered: false
+  team_url: MyString
+  coaching_staff_url: MyString
+  mascot: MyString
+  head_coach_name: MyString
+  head_coach_email: MyString
+  special_teams_coach_name: MyString
+  special_teams_coach_email: MyString
+  comments: MyText
+
+two:
+  college_name: MyString
+  college_main_url: MyString
+  college_street_address: MyString
+  college_city: MyString
+  college_state: MyString
+  college_zip: MyString
+  major_offered: false
+  team_url: MyString
+  coaching_staff_url: MyString
+  mascot: MyString
+  head_coach_name: MyString
+  head_coach_email: MyString
+  special_teams_coach_name: MyString
+  special_teams_coach_email: MyString
+  comments: MyText

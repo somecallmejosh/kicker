@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="large12 columns">
+        <h1>College <small>Wish List</small></h1>
+
+        <table>
+          <thead>
+              <tr>
+                <th>College name</th>
+                <th>College main url</th>
+                <th>Location</th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+          </thead>
+          <tbody>
+              <% @college_wish_lists.each do |college_wish_list| %>
+                <tr>
+                  <td><%= college_wish_list.college_name %></td>
+                  <td><%= college_wish_list.college_main_url %></td>
+                  <td><a href="https://www.google.com/maps/preview#!q=<<%= college_wish_list.college_street_address %>%2C+<%= college_wish_list.college_city %>%2C+<%= college_wish_list.college_state %>%2C+<%= college_wish_list.college_zip %>" target="_blank" class="button expand show-for-small-only">Google Map</a></td>
+                  <td><%= link_to 'Show', college_wish_list %></td>
+                  <td><%= link_to 'Edit', edit_college_wish_list_path(college_wish_list) %></td>
+                  <td><%= link_to 'Destroy', college_wish_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              <% end %>
+          </tbody>
+        </table>
+
+        <%= link_to 'Add Another College', new_college_wish_list_path , :class=> "button" %>
+    </div>
+</div>

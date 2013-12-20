@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131219235009) do
+ActiveRecord::Schema.define(:version => 20131220025633) do
 
   create_table "awards", :force => true do |t|
     t.string   "award_name"
@@ -49,6 +49,26 @@ ActiveRecord::Schema.define(:version => 20131219235009) do
     t.datetime "updated_at",             :null => false
     t.string   "school_phone"
     t.string   "school_fax"
+  end
+
+  create_table "college_wish_lists", :force => true do |t|
+    t.string   "college_name"
+    t.string   "college_main_url"
+    t.string   "college_street_address"
+    t.string   "college_city"
+    t.string   "college_state"
+    t.string   "college_zip"
+    t.boolean  "major_offered"
+    t.string   "team_url"
+    t.string   "coaching_staff_url"
+    t.string   "mascot"
+    t.string   "head_coach_name"
+    t.string   "head_coach_email"
+    t.string   "special_teams_coach_name"
+    t.string   "special_teams_coach_email"
+    t.text     "comments"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "field_goals", :force => true do |t|
@@ -107,19 +127,6 @@ ActiveRecord::Schema.define(:version => 20131219235009) do
     t.string   "reference_phone"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
-  end
-
-  create_table "schools", :force => true do |t|
-    t.string   "school_name"
-    t.string   "school_street"
-    t.string   "school_city"
-    t.string   "school_state"
-    t.string   "school_zip"
-    t.string   "school_phone"
-    t.string   "school_fax"
-    t.string   "school_website"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
   end
 
   create_table "users", :force => true do |t|

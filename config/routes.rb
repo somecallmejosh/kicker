@@ -1,4 +1,7 @@
 Kicker::Application.routes.draw do
+  resources :college_wish_lists
+
+
   resources :references
 
 
