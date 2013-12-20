@@ -160,7 +160,7 @@
                 <div class="row show-for-medium-up">
                     <div class="large-12 columns">
                         <hr>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x89e653629c38db6d%3A0x929ea2da73fa2973!2s1304+Main+St%2C+Hartford%2C+CT+06103!5e0!3m2!1sen!2sus!4v1387244587724" width="100%" height="200" frameborder="0" style="border:0"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x89e653629c38db6d%3A0x929ea2da73fa2973!2s<%= bio.school_street %>%2C+<%= bio.school_city %>%2C+<%= bio.school_state %>%2C+<%= bio.school_zip %>!5e0!3m2!1sen!2sus!4v1387244587724" width="100%" height="200" frameborder="0" style="border:0"></iframe>
                     </div>
                 </div>
             </div>
@@ -169,41 +169,35 @@
         <div class="large-12 columns">
             <h2>References</h2>
             <table>
-                <thead>
+              <thead>
+                  <tr>
+                    <th>Reference name</th>
+                    <th>Reference title</th>
+                    <th>Reference email</th>
+                    <th>Reference phone</th>
+                    <% if user_signed_in? %>
+                    <th></th>
+                    <th></th>
+                    <% end %>
+                  </tr>
+              </thead>
+
+              <tbody>
+                  <% @references.each do |reference| %>
                     <tr>
-                        <th>Title</th>
-                        <td>Name</td>
-                        <th>Phone Number</th>
-                        <th>Email</th>
+                      <td><%= reference.reference_name %></td>
+                      <td><%= reference.reference_title %></td>
+                      <td><%= reference.reference_email %></td>
+                      <td><%= reference.reference_phone %></td>
+                      <% if user_signed_in? %>
+                      <td><%= link_to 'Edit', edit_reference_path(reference), :class=> "button tiny" %></td>
+                      <td><%= link_to 'Destroy', reference, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "button tiny" %></td>
+                      <% end %>
                     </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Guidance Counselor</td>
-                        <td><%= bio.school_counselor_name %></td>
-                        <td><a href="tel:<%= bio.school_counselor_phone %>"><%= bio.school_counselor_phone %></a></td>
-                        <td><a href="mailto:<%= bio.school_counselor_email %>" class="button tiny expand">Email</a></td>
-                    </tr>
-                    <tr>
-                        <td>Head Coach</td>
-                        <td><%= bio.team_head_coach %></td>
-                        <td><a href="tel:<%= bio.team_head_coach_phone %>"><%= bio.team_head_coach_phone %></a></td>
-                        <td><a href="mailto:<%= bio.team_head_coach_email %>" class="button tiny expand">Email</a></td>
-                    </tr>
-                    <tr>
-                        <td>Kicking Coach</td>
-                        <td><%= bio.primary_kicking_coach %></td>
-                        <td><a href="tel:<%= bio.primary_kicking_coach_phone %>"><%= bio.primary_kicking_coach_phone %></a></td>
-                        <td><a href="mailto:<%= bio.primary_kicking_coach_email %>" class="button tiny expand">Email</a></td>
-                    </tr>
-                    <tr>
-                        <td>Special Teams Coach</td>
-                        <td><%= bio.team_special_teams_coach %></td>
-                        <td><a href="tel:<%= bio.team_special_teams_coach_phone %>"><%= bio.team_special_teams_coach_phone %></a> </td>
-                        <td><a href="mailto:<%= bio.team_special_teams_coach_email %>" class="button tiny expand">Email</a></td>
-                    </tr>
-                </tbody>
+              </tbody>
+            <% end %>
             </table>
+            <%= link_to 'New Reference', new_reference_path, :class=> "button" %>
         </div>
     </div>
     <% if user_signed_in? %>

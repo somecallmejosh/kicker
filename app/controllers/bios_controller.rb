@@ -5,7 +5,7 @@ class BiosController < ApplicationController
     @bios = Bio.all
 
     @awards = Award.order('date DESC')
-
+    @references = Reference.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @bios }

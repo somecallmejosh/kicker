@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131217150743) do
+ActiveRecord::Schema.define(:version => 20131219235009) do
 
   create_table "awards", :force => true do |t|
     t.string   "award_name"
@@ -44,22 +44,10 @@ ActiveRecord::Schema.define(:version => 20131217150743) do
     t.string   "school_city"
     t.string   "school_state"
     t.string   "school_zip"
-    t.string   "team_head_coach"
-    t.string   "team_head_coach_phone"
-    t.string   "team_head_coach_email"
-    t.string   "team_special_teams_coach"
-    t.string   "primary_kicking_coach"
     t.boolean  "clearing_house_cleared"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
-    t.string   "primary_kicking_coach_email"
-    t.string   "primary_kicking_coach_phone"
-    t.string   "team_special_teams_coach_phone"
-    t.string   "team_special_teams_coach_email"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
     t.string   "school_phone"
-    t.string   "school_counselor_name"
-    t.string   "school_counselor_email"
-    t.string   "school_counselor_phone"
     t.string   "school_fax"
   end
 
@@ -113,10 +101,10 @@ ActiveRecord::Schema.define(:version => 20131217150743) do
   end
 
   create_table "references", :force => true do |t|
-    t.string   "refernce_name"
+    t.string   "reference_name"
     t.string   "reference_title"
-    t.string   "reference_phone"
     t.string   "reference_email"
+    t.string   "reference_phone"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
