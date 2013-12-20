@@ -2,10 +2,11 @@
 	<div class="large-12 columns">
 		<h1>Admin</h1>
 		<ul class="large-block-grid-4 medium-block-grid-4 small-block-grid-1">
-			<li><%= link_to "View/Edit Images", image_sliders_path, :class => "button expand" %></li>
-			<li><%= link_to "View/Edit Account", edit_user_registration_path, :class => "button expand" %></li>
-			<li><%= link_to 'Add Your Bio', new_bio_path, :class => "button expand" %></li>
-			<li><%= link_to 'Add New Award', new_award_path, :class => "button expand" %></li>
+			<li><%= link_to "Banner Images", image_sliders_path, :class => "button expand" %></li>
+			<li><%= link_to "Security", edit_user_registration_path, :class => "button expand" %></li>
+			<li><%= link_to 'Bio', bios_path, :class => "button expand" %></li>
+			<li><%= link_to 'Awards', awards_path, :class => "button expand" %></li>
+			<li><%= link_to 'References', references_path, :class => "button expand" %></li>
 		</ul>
 	</div>
 	<div class="large-12 columns">
@@ -16,13 +17,6 @@
 			<li><%= link_to "Add Field Goal", new_field_goal_path, :class => "button expand" %></li>
 			<li><%= link_to "Add PAT", new_point_after_attempt_path, :class => "button expand" %></li>
 			<li><%= link_to "Add Punt", new_punt_path, :class => "button expand" %></li>
-		</ul>
-		<h2>View Stats</h2>
-		<ul class="large-block-grid-4 medium-block-grid-4 small-block-grid-1">
-			<li><%= link_to "Kickoffs", kickoffs_path, :class => "button expand" %></li>
-			<li><%= link_to "Field Goals", field_goals_path, :class => "button expand" %></li>
-			<li><%= link_to "PAT's", point_after_attempts_path, :class => "button expand" %></li>
-			<li><%= link_to "Punts", punts_path, :class => "button expand" %></li>
 		</ul>
 	</div>
 </div>
