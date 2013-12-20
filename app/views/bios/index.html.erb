@@ -121,8 +121,8 @@
                   <td><%= l(award.date) %></td>
                   <td><%= award.award_name %></td>
                   <% if user_signed_in? %>
-                  <td><%= link_to 'Edit', edit_award_path(award) %></td>
-                  <td><%= link_to 'Destroy', award, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <td><%= link_to 'Edit', edit_award_path(award), :class=> "button tiny expand" %></td>
+                  <td><%= link_to 'Destroy', award, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "button tiny expand" %></td>
                   <% end %>
                 </tr>
               <% end %>
@@ -171,10 +171,10 @@
             <table>
               <thead>
                   <tr>
-                    <th>Reference name</th>
-                    <th>Reference title</th>
-                    <th>Reference email</th>
-                    <th>Reference phone</th>
+                    <th>Name</th>
+                    <th>Title</th>
+                    <th>Email</th>
+                    <th>Phone</th>
                     <% if user_signed_in? %>
                     <th></th>
                     <th></th>
@@ -187,18 +187,18 @@
                     <tr>
                       <td><%= reference.reference_name %></td>
                       <td><%= reference.reference_title %></td>
-                      <td><%= reference.reference_email %></td>
-                      <td><%= reference.reference_phone %></td>
+                      <td><a href="mailto:<%= reference.reference_email %>"><%= reference.reference_email %></a></td>
+                      <td><a href="tel:<%= reference.reference_phone %>"><%= reference.reference_phone %></a></td>
                       <% if user_signed_in? %>
-                      <td><%= link_to 'Edit', edit_reference_path(reference), :class=> "button tiny" %></td>
-                      <td><%= link_to 'Destroy', reference, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "button tiny" %></td>
+                      <td><%= link_to 'Edit', edit_reference_path(reference), :class=> "button tiny expand" %></td>
+                      <td><%= link_to 'Destroy', reference, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "button tiny expand" %></td>
                       <% end %>
                     </tr>
               </tbody>
             <% end %>
             </table>
             <% if user_signed_in? %>
-            <%= link_to 'New Reference', new_reference_path, :class=> "button" %>
+            <%= link_to 'New Reference', new_reference_path, :class=> "button secondary" %>
             <% end %>
         </div>
     </div>

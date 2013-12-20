@@ -1,25 +1,13 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+	<div class="large-12 columns">
+		<div class="panel">
+			<h1>Reference <small>Submitted</small></h1>
+			<p><strong><%= @reference.reference_title %> <%= @reference.reference_name %></strong> has been submitted.</p>
+			<p>Email: <%= @reference.reference_email %></p>
+			<p>Phone: <%= @reference.reference_phone %></p>
 
-<p>
-  <b>Reference name:</b>
-  <%= @reference.reference_name %>
-</p>
-
-<p>
-  <b>Reference title:</b>
-  <%= @reference.reference_title %>
-</p>
-
-<p>
-  <b>Reference email:</b>
-  <%= @reference.reference_email %>
-</p>
-
-<p>
-  <b>Reference phone:</b>
-  <%= @reference.reference_phone %>
-</p>
-
-
-<%= link_to 'Edit', edit_reference_path(@reference) %> |
-<%= link_to 'Back', references_path %>
+			<%= link_to 'Edit', edit_reference_path(@reference), :class => "button secondary" %>
+			<%= link_to 'Back to Bio', bio_path, :class => "button secondary" %>
+		</div>
+	</div>
+</div>
