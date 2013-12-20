@@ -197,7 +197,9 @@
               </tbody>
             <% end %>
             </table>
+            <% if user_signed_in? %>
             <%= link_to 'New Reference', new_reference_path, :class=> "button" %>
+            <% end %>
         </div>
     </div>
     <% if user_signed_in? %>
