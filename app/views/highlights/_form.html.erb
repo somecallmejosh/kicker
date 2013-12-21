@@ -11,6 +11,7 @@
       </ul>
     </div>
   <% end %>
+  <%= f.input :kick_type, collection: Highlight::TYPE_OF_KICK.invert %>
   <%= f.input :date %>
   <%= f.input :title %>
   <%= f.input :opponent %>

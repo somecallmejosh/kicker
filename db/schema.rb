@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131220025633) do
+ActiveRecord::Schema.define(:version => 20131221161243) do
 
   create_table "awards", :force => true do |t|
     t.string   "award_name"
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(:version => 20131220025633) do
     t.text     "comments"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "kick_type"
   end
 
   create_table "image_sliders", :force => true do |t|

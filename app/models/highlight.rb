@@ -1,5 +1,5 @@
 class Highlight < ActiveRecord::Base
-  attr_accessible :comments, :date, :link, :opponent, :title
+  attr_accessible :comments, :date, :link, :kick_type, :opponent, :title
   belongs_to :user
 
   def previous_highlight
@@ -10,7 +10,15 @@ class Highlight < ActiveRecord::Base
     self.class.first(:conditions => ["id > ?", id], :order => "id asc")
   end
 
+  TYPE_OF_KICK = { 
+      fieldgoal: "Field Goal",
+      kickoff: "Kickoff",
+      pat: "PAT",
+      punt: "Punt"
+    }
+
   validates :comments, presence: true
   validates :link, presence: true
   validates :title, presence: true
+  validates :kick_type, presence: true
 end

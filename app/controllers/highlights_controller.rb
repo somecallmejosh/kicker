@@ -3,6 +3,7 @@ class HighlightsController < ApplicationController
   # GET /highlights.json
   def index
     @highlights = Highlight.order('id ASC')
+    #@highlights = Highlight.order(:kick_type).group_by{|u| u.kick_type[0]}
 
     respond_to do |format|
       format.html # index.html.erb
