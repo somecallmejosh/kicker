@@ -3,32 +3,47 @@
   <%= f.error_notification %>
   <div class="row">
     <div class="large-6 columns">
-      <%= f.input :college_name %>
+      <h2><small>College Info</small></h2>
+      <div class="row">
+        <div class="large-6 columns">
+          <%= f.input :college_name %>
+        </div>
+        <div class="large-6 columns">
+          <%= f.input :mascot %>
+        </div>
+      </div>      
+      <%= f.input :college_street_address, label: "Street Address" %>
+      
+      <div class="row">
+        <div class="large-6 columns"><%= f.input :college_city, label: "City" %></div>
+        <div class="large-4 columns"><%= f.input :college_state, label: "State", collection: us_states %></div>
+        <div class="large-2 columns"><%= f.input :college_zip, label: "Zip" %></div>
+      </div>
+      <%= f.input :major_offered, label: "Click if this school offers your major." %>
     </div>
     <div class="large-6 columns">
-      <%= f.input :college_main_url %>
+      <h2><small>Important Web Sites</small></h2>
+      <%= f.input :college_main_url, label: "School Web Addres" %>
+      <%= f.input :team_url, label: "Team Web Address" %>
+      <%= f.input :coaching_staff_url, label: "Coaching Staff Web Address" %>
     </div>
-  </div>
-
-
-
-
-  <div class="form-inputs">
-    
-    
-    <%= f.input :college_street_address %>
-    <%= f.input :college_city %>
-    <%= f.input :college_state %>
-    <%= f.input :college_zip %>
-    <%= f.input :major_offered %>
-    <%= f.input :team_url %>
-    <%= f.input :coaching_staff_url %>
-    <%= f.input :mascot %>
-    <%= f.input :head_coach_name %>
-    <%= f.input :head_coach_email %>
-    <%= f.input :special_teams_coach_name %>
-    <%= f.input :special_teams_coach_email %>
-    <%= f.input :comments %>
+    <div class="large-12 columns">
+      <h2><small>Coaching Info</small></h2>
+    </div>
+    <div class="large-6 columns">
+      <h3><small>Head Coach</small></h3>
+      <%= f.input :head_coach_name, label: "Name" %>
+      <%= f.input :head_coach_email, label: "Email Address" %>
+    </div>
+    <div class="large-6 columns">
+      <h3><small>Special Teams Coach</small></h3>
+      <%= f.input :special_teams_coach_name, label: "Name" %>
+      <%= f.input :special_teams_coach_email, label: "Email Address" %>
+    </div>
+    <div class="large-12 columns">
+      <h2><small>General Observations</small></h2>
+      <%= f.input :comments, label: "What would interest this school about you?" %>
+    </div>
   </div>
 
   <div class="form-actions">
