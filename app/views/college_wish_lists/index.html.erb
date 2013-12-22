@@ -5,8 +5,8 @@
         <table>
           <thead>
               <tr>
-                <th>College name</th>
-                <th>College main url</th>
+                <th>College</th>
+                <th>College Website</th>
                 <th>Location</th>
                 <th></th>
                 <th></th>
@@ -16,7 +16,7 @@
           <tbody>
               <% @college_wish_lists.each do |college_wish_list| %>
                 <tr>
-                  <td><%= college_wish_list.college_name %></td>
+                  <td><%= link_to college_wish_list.college_name, college_wish_list %></td>
                   <td><a href="<%= college_wish_list.college_main_url %>">Website</a></td>
                   <td><a href="https://www.google.com/maps/preview#!q=<%= college_wish_list.college_street_address %>%2C+<%= college_wish_list.college_city %>%2C+<%= college_wish_list.college_state %>" target="_blank" >Google Map</a></td>
                   <td><%= link_to 'Show', college_wish_list %></td>
