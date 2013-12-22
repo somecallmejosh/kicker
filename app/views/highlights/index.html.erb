@@ -10,8 +10,17 @@
   </div>
 </div>
 <div class="row">
+<div class="large-12 columns kick-type-select">
+  <ul class="inline-list">
+    <li><strong>Show:</strong></li>
+    <li class="show-all-kicks"><a href="#" data-show="all">All Highlights</a></li>
+    <li class="kickoff"><a href="#" data-show="kickoffs">Kickoffs</a></li>
+    <li class="fieldgoal"><a href="#" data-show="field-goals">Field Goals</a></li>
+    <li class="punt"><a href="#" data-show="punts">Punts</a></li>
+  </ul>
+</div>
 <div class="large-12 columns">
-  <ul class="large-block-grid-4">
+  <ul class="large-block-grid-4 highlights">
   <% @highlights.each do |highlight| %>
     <li class="<%= highlight.kick_type %>">
       <%= link_to image_tag("http://img.youtube.com/vi/#{highlight.link}/0.jpg", :class => "img-responsive"), highlight  %>
