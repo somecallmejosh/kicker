@@ -16,8 +16,10 @@ Kicker::Application.routes.draw do
 
   devise_for :users
 
-  get "static_pages/home"
+  get "static_pages/stats"
   get "static_pages/admin"
+  get "static_pages/landing"
+  get "static_pages/kicker_list"
   resources :point_after_attempts
 
 
@@ -88,7 +90,7 @@ Kicker::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'static_pages#home'
+  root :to => 'static_pages#landing'
 
   # See how all your routes lay out with "rake routes"
 

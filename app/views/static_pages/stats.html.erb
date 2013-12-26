@@ -1,26 +1,16 @@
 <% provide(:title, kicker_name + " | Kicker") %>
-<div class="hide-for-small-only">
-	<ul class="example-orbit" data-orbit>
-		<% @image_sliders.each do |image_slider| %>
-			<li>
-			  <img src="<%= image_slider.image_link %>" class="img-responsive" alt="<%= image_slider.alt_tag %>">
-			  <div class="orbit-caption">
-			    <%= image_slider.caption %>
-			  </div>
-			</li>
-		<% end %>
-	</ul>
-</div>
 <div class="show-for-small-only">
 	<% @bios.each do |bio| %>
 		<img src="<%= bio.image_link %>" class="img-responsive">
 	<% end %>
 </div>
 <div class="row">
-	<div class="large-12 columns text-center">
-		<h1><%= kicker_name %> <br class="show-for-small-only"><small>Kicking Prospect</small></h1>
+	<div class="large-12 columns">
+		<h1><%= kicker_name %> <small>Kicking Stats</small></h1>
 	</div>
 </div>
+<%= render("/shared/sub-nav") %>
+
 <div class="row text-center">
 	<div class="large-3 medium-6 columns">
 		<div class="panel">

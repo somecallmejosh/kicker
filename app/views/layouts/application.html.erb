@@ -11,27 +11,10 @@
     <div class="off-canvas-wrap">
       <div class="inner-wrap">
         <aside class="left-off-canvas-menu">
-          <% if user_signed_in? %>
-            <ul class="off-canvas-list">
-              <li><label class="first">Quick Add</label></li>
-              <li><%= nav_link "Add Kickoff", new_kickoff_path %></li>
-              <li><%= nav_link "Add Field Goal", new_field_goal_path %></li>
-              <li><%= nav_link "Add PAT", new_point_after_attempt_path %></li>
-              <li><%= nav_link "Add Punt", new_punt_path %></li>
-            </ul>
-          <% end %>
           <ul class="off-canvas-list">
-            <li><label class="first"><%= kicker_name %></label></li>
-            <li><%= nav_link "Home", static_pages_home_path %></li>
-            <li><%= nav_link "Bio", bios_path %></li>
-            <li><%= nav_link "Highlights", highlights_path %></li>
-          </ul>
-          <ul class="off-canvas-list">
-            <li><label class="first">Stats</label></li>
-            <li><%= nav_link "Kickoffs", kickoffs_path %></li>
-            <li><%= nav_link "Field Goals", field_goals_path %></li>
-            <li><%= nav_link "PAT's", point_after_attempts_path %></li>
-            <li><%= nav_link "Punts", punts_path %></li>
+            <li><label class="first"><%= app_name %></label></li>
+            <li><%= nav_link "Home", root_path %></li>
+            <li><%= nav_link "Kickers", static_pages_kicker_list_path %></li>
           </ul>
           <ul class="off-canvas-list">
             <li><label class="first">Action Center</label></li>
@@ -49,34 +32,13 @@
         <nav class="top-bar show-for-large-up" data-topbar>
           <ul class="title-area">
             <li class="name">
-              <h1><a href="/"><%= kicker_name %></a></h1>
+              <h1><a href="/"><%= app_name %></a></h1>
             </li>
           </ul>
           <section class="top-bar-section">
             <ul class="left">
               <li><%= nav_link "Home", root_path %></li>
-              <li><%= nav_link "Bio", bios_path %></li>
-              <li><%= nav_link "Highlights", highlights_path %></li>
-              <li class="has-dropdown">
-                <a href="#">Stats</a>
-                <ul class="dropdown">
-                  <li><%= nav_link "Kickoffs", kickoffs_path %></li>
-                  <li><%= nav_link "Field Goals", field_goals_path %></li>
-                  <li><%= nav_link "PAT's", point_after_attempts_path %></li>
-                  <li><%= nav_link "Punts", punts_path %></li>
-                </ul>
-              </li>
-              <% if user_signed_in? %>
-             <li class="has-dropdown">
-               <a href="#">Add Kicks</a>
-               <ul class="dropdown">
-                 <li><%= nav_link "Add Kickoff", new_kickoff_path %></li>
-                 <li><%= nav_link "Add Field Goal", new_field_goal_path %></li>
-                 <li><%= nav_link "Add PAT", new_point_after_attempt_path %></li>
-                 <li><%= nav_link "Add Punt", new_punt_path %></li>
-               </ul>
-             </li>
-              <% end %>
+              <li><%= nav_link "Kickers", static_pages_kicker_list_path %></li>
             </ul>
             <ul class="right">
               <% if user_signed_in? %>

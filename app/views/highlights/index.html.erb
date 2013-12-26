@@ -1,7 +1,7 @@
 <% provide(:title, kicker_name + " | Kicking Highlights") %>
 <div class="row">
   <div class="large-10 medium-10 columns">
-    <h1>Kicking <small>Highlights</small></h1>
+    <h1><%= kicker_name %> <small>Kicking Highlights</small></h1>
   </div>
   <div class="large-2 medium-2 columns">
     <% if user_signed_in? %>
@@ -9,6 +9,7 @@
     <% end %>
   </div>
 </div>
+<%= render("/shared/sub-nav") %>
 <div class="row">
 <div class="large-12 columns">
   <ul class="inline-list kick-type-select">

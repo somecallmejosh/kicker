@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  def home
+  def stats
     @field_goals = FieldGoal.all
     @total_field_goals = FieldGoal.count(:conditions => { :is_good => true }) * 3
     @field_goal_long = FieldGoal.maximum('distance', :conditions => {:is_good => true})
@@ -27,11 +27,13 @@ class StaticPagesController < ApplicationController
 
     @total_points = Integer(@total_field_goals.to_f + @total_pats.to_f)
 
-    @image_sliders = ImageSlider.all
-
     @bios = Bio.all
   end
   def admin
 
+  end
+  def landing
+  end
+  def kicker_list
   end
 end

@@ -1,6 +1,12 @@
 <div class="row">
 	<div class="large-12 columns">
 		<h1>Admin</h1>
+	</div>
+</div>
+<%= render("/shared/sub-nav") %>
+<div class="row">
+	<div class="large-12 columns">
+		
 		<ul class="large-block-grid-4 medium-block-grid-4 small-block-grid-1">
 			<li><%= link_to "Banner Images", image_sliders_path, :class => "button expand" %></li>
 			<li><%= link_to "Security", edit_user_registration_path, :class => "button expand" %></li>
