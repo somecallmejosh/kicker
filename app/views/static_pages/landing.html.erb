@@ -1,29 +1,31 @@
 <% provide(:title, "iKick.it, Because I can!") %>
+<div class="hide-for-small-only">
+    <ul class="example-orbit" data-orbit>
+        <% @image_sliders.each do |image_slider| %>
+            <li>
+              <img src="<%= image_slider.image_link %>" class="img-responsive" alt="<%= image_slider.alt_tag %>">
+              <div class="orbit-caption">
+                <%= image_slider.caption %>
+              </div>
+            </li>
+        <% end %>
+    </ul>
+</div>
 <div class="row">
-	<div class="large-12 columns">
-		<h1><%= app_name %> <small>for people who kick footballs</small></h1>
+	<div class="large-12 columns text-center hide-for-small-only">
+		<h1><%= app_name %> <small>a destination for football kickers</small></h1>
 	</div>
-	<div class="large-6 columns">
-		<ul class="example-orbit" data-orbit>
-				<li>
-				  <img src="https://dl.dropboxusercontent.com/u/39806773/kicker/landing-2.jpg" class="img-responsive" alt="Some tag">
-				  <div class="orbit-caption">
-				    A Network for College Bound Kickers
-				  </div>
-				</li>
-				<li>
-				  <img src="https://dl.dropboxusercontent.com/u/39806773/kicker/landing-1.jpg" class="img-responsive" alt="Some tag">
-				  <div class="orbit-caption">
-				    A Place for Coaches to Find Kickers
-				  </div>
-				</li>
-		</ul>
+	<div class="large-12 columns text-center show-for-small-only">
+		<h1><%= app_name %></h1>
 	</div>
-	<div class="large-6 columns">
-		<h1>Get Started Today</h1>
+	<div class="large-6 medium-6 columns text-center">
+		<img src="https://dl.dropboxusercontent.com/u/39806773/kicker/landing-2.jpg" class="img-responsive" alt="Some tag">
+	</div>
+	<div class="large-6 medium-6 columns">
+		<h1>Get Started</h1>
 		<p><%= app_name %> is absolutely free to kickers and recruiting coaches. No strings attached. Simple easy to get started.</p>
 		<a href="#" class="button expand large">Signup</a> 
-		<a href="#">Login</a> | <%= link_to "Search for Kickers", static_pages_kicker_list_path %>
+		<p class="text-right"><a href="#">Login</a> | <%= link_to "Search for Kickers", static_pages_kicker_list_path %></p>
 	</div>
 
 </div>

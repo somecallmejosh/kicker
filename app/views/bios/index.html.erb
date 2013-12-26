@@ -1,17 +1,5 @@
 <% provide(:title, kicker_name + " | Bio") %>
 <% @bios.each do |bio| %>
-    <!-- <div class="hide-for-small-only">
-        <ul class="example-orbit" data-orbit>
-            <% @image_sliders.each do |image_slider| %>
-                <li>
-                  <img src="<%= image_slider.image_link %>" class="img-responsive" alt="<%= image_slider.alt_tag %>">
-                  <div class="orbit-caption">
-                    <%= image_slider.caption %>
-                  </div>
-                </li>
-            <% end %>
-        </ul>
-    </div> -->
     <div class="row">
         <div class="large-8 medium-8 columns">
             <h1><%= bio.first_name %> <%= bio.last_name %> <small>Bio</small></h1>

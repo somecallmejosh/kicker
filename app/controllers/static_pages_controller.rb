@@ -26,14 +26,15 @@ class StaticPagesController < ApplicationController
     @punt_long = Punt.maximum('distance')
 
     @total_points = Integer(@total_field_goals.to_f + @total_pats.to_f)
-
     @bios = Bio.all
   end
   def admin
 
   end
   def landing
+    @image_sliders = ImageSlider.all
   end
   def kicker_list
+    
   end
 end

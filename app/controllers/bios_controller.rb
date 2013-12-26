@@ -6,7 +6,6 @@ class BiosController < ApplicationController
 
     @awards = Award.order('date DESC')
     @references = Reference.all
-    @image_sliders = ImageSlider.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @bios }

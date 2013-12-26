@@ -17,7 +17,7 @@
             <li><%= nav_link "Kickers", static_pages_kicker_list_path %></li>
           </ul>
           <ul class="off-canvas-list">
-            <li><label class="first">Action Center</label></li>
+            <li><label class="first">Account Center</label></li>
             <% if user_signed_in? %>
               <li><%= nav_link "Admin", static_pages_admin_path %></li>
               <li><%= nav_link "Log Out", logout_path %></li>  
@@ -26,7 +26,7 @@
         </aside>
         <nav class="tab-bar hide-for-large-up">
           <a class="left-off-canvas-toggle menu-icon">
-            <span><%= kicker_name %></span>
+            <span><%= app_name %></span>
           </a>
         </nav>
         <nav class="top-bar show-for-large-up" data-topbar>
@@ -61,7 +61,7 @@
     <footer>
       <div class="row">
         <div class="large-6 columns">
-          <p><%= link_to "Home", root_path %> | <%= link_to "Bio", bios_path %> | <%= link_to "Highlights", highlights_path %></p>
+          <p><%= link_to "Home", root_path %> | <%= link_to "Kickers", static_pages_kicker_list_path %></p>
         </div>
         <div class="large-6 columns text-right">
           <p>&copy;<%= Time.now.year %> <%= kicker_name %>. All rights reserved.</p>
