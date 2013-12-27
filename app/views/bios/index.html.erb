@@ -4,20 +4,16 @@
         <div class="large-8 medium-8 columns">
             <h1><%= bio.first_name %> <%= bio.last_name %> <small>Bio</small></h1>
         </div>
-        <div class="large-2 medium-2 columns">
-            <a href="mailto:<%= bio.email %>" class="button expand">Email <%= bio.first_name %></a>
-        </div>
-        <div class="large-2 medium-2 columns">
-            <a href="tel:<%= bio.phone %>" class="button expand"><%= bio.phone %></a>
+        <div class="large-4 medium-4 columns">
+            <a href="#" class="button expand">Follow <%= bio.first_name %></a>
         </div>
     </div>
     <%= render("/shared/sub-nav") %>
     <div class="row">
-        <div class="large-5 columns text-center">
+        <div class="large-4 medium-6 columns text-center">
             <img src="<%= bio.image_link %>" class="img-responsive">
         </div>
-        <div class="large-7 columns">
-            <h3 class="subheader"><%= bio.first_name %> <%= bio.last_name %> <small>Academic Info</small></h3>
+        <div class="large-8 medium-6 columns">
             <table>
                 <thead>
                     <tr>
@@ -50,56 +46,76 @@
             </table>
         </div>
     </div>
-    <div class="row">
+    <div class="row hide-for-small-only">
         <div class="large-12 columns">
+            <hr>
+            <ul class="medium-block-grid-6 large-block-grid-6 text-center">
+                <li>
+                    <h4>Height</h4>
+                    <%= bio.height %>"
+                </li>
+                <li>
+                    <h4>Weight</h4>
+                    <%= bio.weight %>lbs.
+                </li>
+                <li>
+                    <h4>40yd Dash</h4>
+                    <%= bio.sprint_40_time %>secs
+                </li>
+                <li>
+                    <h4>Vertical</h4>
+                    <%= bio.vertical_jump %>"
+                </li>
+                <li>
+                    <h4>Leg Press</h4>
+                    <%= bio.squat %>lbs.
+                </li>
+                <li>
+                    <h4>Bench</h4>
+                    <%= bio.bench_press %>lbs.
+                </li>  
+            </ul>
+        </div>          
+    </div>
+    <div class="row text-center">
+        <div class="large-3 medium-6 columns">
             <div class="panel">
-                <%= bio.bio_content %>
+                <p><strong>Total Points:</strong> </p>
+                <h1><%= @total_points %></h1>
+                <p>PATs: <%= @total_pats %> -  FGs: <%= @total_field_goals %></p>
             </div>
+        </div>
+        <div class="large-3 medium-6 columns">
+            <div class="panel">
+                <p><strong>Field Goal Long:</strong></p>
+                <h1><%= @field_goal_long %></h1>
+                <p>FG Success: <%= @field_goal_percent %>%</p>
+            </div>
+        </div>
+        <div class="large-3 medium-6 columns">
+            <div class="panel">
+                <p><strong>Kickoff Long:</strong></p>
+                <h1><%= @kickoff_long %></h1>
+                <p>Avg KO: <%= @kickoff_avg %>yds</p>
+            </div>
+        </div>
+        <div class="large-3 medium-6 columns">
+            <div class="panel">
+                <p><strong>Total Kickoff Yards:</strong></p>
+                <h1><%= @total_kickoff_yards %></h1>
+                <p>Touchbacks: <%= @touchback_percentage %>%</p>
+            </div>
+        </div>
+        <div class="large-12 columns">
+            <hr>
         </div>
     </div>
     <div class="row">
-        <div class="large-12 columns">
-            <h2>Physical</h2>
+        <div class="large-10 large-centered columns">
+             <strong>Bio:</strong> <%= bio.bio_content %>
         </div>
         <div class="large-12 columns">
-            <ul class="large-block-grid-3 small-block-grid-1 medium-block-grid-3">
-                <li class="text-center">
-                    <div class="panel">
-                        <h4>Height</h4>
-                        <p><%= bio.height %>"</p>
-                    </div>
-                </li>
-                <li class="text-center">
-                    <div class="panel">
-                        <h4>Weight</h4>
-                        <p><%= bio.weight %>lbs.</p>
-                    </div>
-                </li>
-                <li class="text-center">
-                    <div class="panel">
-                        <h4>40yd Dash</h4>
-                        <p><%= bio.sprint_40_time %>secs</p>
-                    </div>
-                </li>
-                <li class="text-center">
-                    <div class="panel">
-                        <h4>Vertical Jump</h4>
-                        <p><%= bio.vertical_jump %>"</p>
-                    </div>
-                </li>
-                <li class="text-center">
-                    <div class="panel">
-                        <h4>Bench Press</h4>
-                        <p><%= bio.bench_press %>lbs.</p>
-                    </div>
-                </li>
-                <li class="text-center">
-                    <div class="panel">
-                        <h4>Leg Press</h4>
-                        <p><%= bio.squat %>lbs.</p>
-                    </div>
-                </li>
-            </ul>
+            <hr>
         </div>
     </div>
     <div class="row">

@@ -16,7 +16,6 @@ Kicker::Application.routes.draw do
 
   devise_for :users
 
-  get "static_pages/stats"
   get "static_pages/admin"
   get "static_pages/landing"
   get "static_pages/kicker_list"
