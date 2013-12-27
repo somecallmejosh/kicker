@@ -1,15 +1,77 @@
 <% provide(:title, "iKick.it, Kicker List") %>
 <div class="row">
-	<div class="large-12 columns">
+	<div class="large-9 columns">
 		<h1>Kicker List</h1>
 	</div>
-	<div class="large-12 columns">
-		<h2>Standout Players</h2>
-		<p>This page still requires further design. There will be several search parameters in this area. I still don't have a well thought out plan for the layout of this section.</p>
-		<ul class="large-block-grid-4 medium-block-grid-3">
-			<li>
-				<%= link_to kicker_name, bios_path %>
-			</li>
-		</ul>
+	<div class="large-3 columns">
+		<a href="#" class="button expand" data-reveal-id="searchModal">Advanced Search</a>
+		<div id="searchModal" class="reveal-modal small" data-reveal>
+		  <h2>Search for Kicker By:</h2>
+		  <ul class="inline-list">
+		  	<li>TB%</li>
+		  	<li>FG%</li>
+		  	<li>Punt Avg.</li>
+		  	<li>SAT Score</li>
+		  	<li>GPA Score</li>
+		  </ul>
+
+		  <a class="close-reveal-modal">&#215;</a>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="large-4 columns">
+		<h2>Kickoffs <small>Top 2</small></h2>
+			<div class="row">
+				<div class="large-6 columns"><img src="https://dl.dropboxusercontent.com/u/39806773/kicker/chase-bio-pic.jpg" class="img-responsive" alt=""></div>
+				<div class="large-6 columns">
+					<p><strong><%= link_to kicker_name, bios_path %></strong><br>Hartford, CT<br>TB Avg: 99%<br>GPA: 3.2</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-12 columns">
+					<hr>
+				</div>
+				<div class="large-6 columns"><img src="https://dl.dropboxusercontent.com/u/39806773/kicker/chase-bio-pic.jpg" class="img-responsive" alt=""></div>
+				<div class="large-6 columns">
+					<p><strong><%= link_to kicker_name, bios_path %></strong><br>Hartford, CT<br>TB Avg: 99%<br>GPA: 3.2</p>
+				</div>
+			</div>
+	</div>
+	<div class="large-4 columns">
+		<h2>Field Goals <small>Top 2</small></h2>
+		<div class="row">
+				<div class="large-6 columns"><img src="https://dl.dropboxusercontent.com/u/39806773/kicker/chase-bio-pic.jpg" class="img-responsive" alt=""></div>
+				<div class="large-6 columns">
+					<p><strong><%= link_to kicker_name, bios_path %></strong><br>Hartford, CT<br>FG Avg: 99%<br>GPA: 3.2</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="large-12 columns">
+					<hr>
+				</div>
+				<div class="large-6 columns"><img src="https://dl.dropboxusercontent.com/u/39806773/kicker/chase-bio-pic.jpg" class="img-responsive" alt=""></div>
+				<div class="large-6 columns">
+					<p><strong><%= link_to kicker_name, bios_path %></strong><br>Hartford, CT<br>FG Avg: 99%<br>GPA: 3.2</p>
+				</div>
+			</div>
+	</div>
+	<div class="large-4 columns">
+		<h2>Punts <small>Top 2</small></h2>
+		<div class="row">
+			<div class="large-6 columns"><img src="https://dl.dropboxusercontent.com/u/39806773/kicker/chase-bio-pic.jpg" class="img-responsive" alt=""></div>
+			<div class="large-6 columns">
+				<p><strong><%= link_to kicker_name, bios_path %></strong><br>Hartford, CT<br>Punt Avg: 48yd<br>GPA: 3.2</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-12 columns">
+				<hr>
+			</div>
+			<div class="large-6 columns"><img src="https://dl.dropboxusercontent.com/u/39806773/kicker/chase-bio-pic.jpg" class="img-responsive" alt=""></div>
+			<div class="large-6 columns">
+				<p><strong><%= link_to kicker_name, bios_path %></strong><br>Hartford, CT<br>Punt Avg: 48yd<br>GPA: 3.2</p>
+			</div>
+		</div>
 	</div>
 </div>
