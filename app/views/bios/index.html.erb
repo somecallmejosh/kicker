@@ -5,7 +5,12 @@
             <h1><%= bio.first_name %> <%= bio.last_name %> <small>Bio</small></h1>
         </div>
         <div class="large-4 medium-4 columns">
-            <a href="#" class="button expand">Follow <%= bio.first_name %></a>
+            <a href="#" class="button expand" data-reveal-id="followModal">Follow <%= bio.first_name %></a>
+            <div id="followModal" class="reveal-modal small" data-reveal>
+              <h2>Follow <%= bio.first_name %> <%= bio.last_name %></h2>
+              <p>GPA changes, SAT changes, highlight updates, new awards, significant changes to stats, etc.</p>
+
+              <a class="close-reveal-modal">&#215;</a>
         </div>
     </div>
     <%= render("/shared/sub-nav") %>
