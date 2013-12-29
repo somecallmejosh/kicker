@@ -50,8 +50,8 @@
           <td><%= field_goal.distance %></td>
           <td><%= field_goal.is_good  ? 'Yes' : 'No' %></td>
           <% if user_signed_in? %>
-          <td><%= link_to 'Edit', edit_field_goal_path(field_goal), :class => "button secondary tiny"  %></td>
-          <td><%= link_to 'Remove', field_goal, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button secondary tiny"  %></td>
+          <td><%= link_to raw('<i class="fa fa-pencil"></i>'), edit_field_goal_path(field_goal), :class => "button tiny expand"  %></td>
+          <td><%= link_to raw('<i class="fa fa-times-circle"></i>'), field_goal, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button tiny expand"  %></td>
           <% end %>
         </tr>
         <% end %>

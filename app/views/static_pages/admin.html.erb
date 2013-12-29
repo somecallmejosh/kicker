@@ -1,29 +1,361 @@
 <div class="row">
 	<div class="large-12 columns">
-		<h1>Admin</h1>
+		<h1><%= kicker_name %> <small>Admin</small></h1>
 	</div>
 </div>
-<%= render("/shared/sub-nav") %>
 <div class="row">
 	<div class="large-12 columns">
-		
-		<ul class="large-block-grid-4 medium-block-grid-4 small-block-grid-1">
-			<li><%= link_to "Banner Images", image_sliders_path, :class => "button expand" %></li>
-			<li><%= link_to "Security", edit_user_registration_path, :class => "button expand" %></li>
-			<li><%= link_to 'Bio', bios_path, :class => "button expand" %></li>
-			<li><%= link_to 'Awards', awards_path, :class => "button expand" %></li>
-			<li><%= link_to 'References', references_path, :class => "button expand" %></li>
-			<li><%= link_to 'College Wish List', college_wish_lists_path, :class => "button expand" %></li>
-		</ul>
-	</div>
-	<div class="large-12 columns">
-		<h1>Stats</h1>
-		<h2>Quick Add</h2>
-		<ul class="large-block-grid-4 medium-block-grid-4 small-block-grid-1">
-			<li><%= link_to "Add Kickoff", new_kickoff_path, :class => "button expand" %></li>
-			<li><%= link_to "Add Field Goal", new_field_goal_path, :class => "button expand" %></li>
-			<li><%= link_to "Add PAT", new_point_after_attempt_path, :class => "button expand" %></li>
-			<li><%= link_to "Add Punt", new_punt_path, :class => "button expand" %></li>
-		</ul>
+		<dl class="tabs vertical" data-tab>
+		  <dd class="active"><a href="#bio"><i class="fa fa-user"></i> Bio</a></dd>
+		  <dd><a href="#awards"><i class="fa fa-trophy"></i> Awards</a></dd>
+		  <dd><a href="#references"><i class="fa fa-users"></i> References</a></dd>
+		  <dd><a href="#stats"><i class="fa fa-bar-chart-o"></i> Stats</a></dd>
+		  <dd><a href="#college-lists"><i class="fa fa-apple"></i> College List</a></dd>
+		  <dd><a href="#highlights-list"><i class="fa fa-video-camera"></i> Highlights</a></dd>
+		</dl>
+		<div class="tabs-content vertical">
+			<div class="content active" id="bio">
+				<% @bios.each do |bio| %>
+				<%= link_to "Edit Bio", edit_bio_path(bio), :class => "button right" %>
+				<h1><i class="fa fa-user"></i> Bio</h1>
+				<div class="row">
+
+					<div class="large-5 medium-6 columns text-center">
+				    <img src="<%= bio.image_link %>" class="img-responsive">
+					</div>
+					<div class="large-7 medium-6 columns">
+					    <table>
+					        <thead>
+					            <tr>
+					                <th>Category</th>
+					                <th>Result</th>
+					            </tr>
+					        </thead>
+					        <tbody>
+					            <tr>
+					                <td>GPA</td>
+					                <td><%= bio.GPA %></td>
+					            </tr>
+					            <tr>
+					                <td>ACT</td>
+					                <td><%= bio.ACT_score %></td>
+					            </tr>
+					            <tr>
+					                <td>Graduation Year</td>
+					                <td><%= bio.graduation_year %></td>
+					            </tr>
+					            <tr>
+					                <td>SAT</td>
+					                <td><%= bio.SAT_score %></td>
+					            </tr>
+					            <tr>
+					                <td>College Credits</td>
+					                <td><%= bio.college_credits_earned %></td>
+					            </tr>
+					        </tbody>
+					    </table>
+					</div>
+					<div class="large-12 columns">
+					  <h2><i class="fa fa-heart"></i> Physical</h2>
+					  <ul class="medium-block-grid-6 large-block-grid-6 text-center">
+					      <li>
+					          <div class="panel">
+					          	<h4>Height</h4>
+					          	<%= bio.height %>"
+					          </div>
+					      </li>
+					      <li>
+					          <div class="panel">
+					          	<h4>Weight</h4>
+					          	<%= bio.weight %>lbs.
+					          </div>
+					      </li>
+					      <li>
+					          <div class="panel">
+					          	<h4>40yd</h4>
+					          	<%= bio.sprint_40_time %>secs
+					          </div>
+					      </li>
+					      <li>
+					          <div class="panel">
+					          	<h4>Vertical</h4>
+					          	<%= bio.vertical_jump %>"
+					          </div>
+					      </li>
+					      <li>
+					          <div class="panel">
+					          	<h4>Leg</h4>
+					          	<%= bio.squat %>lbs.
+					          </div>
+					      </li>
+					      <li>
+					          <div class="panel">
+					          	<h4>Bench</h4>
+					          	<%= bio.bench_press %>lbs.
+					          </div>
+					      </li>  
+					  </ul>
+					</div>          
+					<div class="large-12 columns">
+					    <h2><i class="fa fa-apple"></i> School Contact Info</h2>
+
+					    <div class="panel">
+					        <div class="row">
+					            <div class="large-4 medium-4 columns">
+					                <div class="fn"><strong><%= bio.school_name %></strong></div>
+					                <div class="street-address"><%= bio.school_street %></div>
+					                <div>
+					                    <span class="locality"><%= bio.school_city %></span>, <span class="state"><%= bio.school_state %></span>, <span class="zip"><%= bio.school_zip %></span>
+					                </div>
+					            </div>
+					            <div class="large-6 medium-6 columns">
+					                <p>
+					                    <strong>Phone:</strong> <a href="tel:<%= bio.school_phone %>"><%= bio.school_phone %></a><br>
+					                    <strong>Fax:</strong>  <%= bio.school_fax %>
+					                </p>
+					            </div>
+					            <div class="large-2 medium-2 columns">
+					                <a href="<%= bio.school_url %>" class="button expand">Website</a>
+					                <a href="https://www.google.com/maps/preview#!q=<%= bio.school_street %>%2C+<%= bio.school_city %>%2C+<%= bio.school_state %>" target="_blank" class="button expand show-for-small-only">Directions</a>
+					            </div>
+					        </div>
+					        <div class="row show-for-medium-up">
+					            <div class="large-12 columns">
+					                <hr>
+					                <iframe src="https://www.google.com/maps/embed?pb=!1m5!3m3!1m2!1s0x89e653629c38db6d%3A0x929ea2da73fa2973!2s<%= bio.school_street %>%2C+<%= bio.school_city %>%2C+<%= bio.school_state %>%2C+<%= bio.school_zip %>!5e0!3m2!1sen!2sus!4v1387244587724" width="100%" height="200" frameborder="0" style="border:0"></iframe>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+				<% end %>
+			</div>
+		  <div class="content" id="awards">
+		  	<%= link_to "Add Award", new_award_path, :class => "button right" %>
+		  	<h1><i class="fa fa-trophy"></i> Awards</h1>
+		    <table width="100%">
+		      <tr>
+		        <th>Date</th>
+		        <th>Award name</th>
+		        <% if user_signed_in? %>
+		        <th></th>
+		        <th></th>
+		        <% end %>
+		      </tr>
+		    
+		    <% @awards.each do |award| %>
+		      <tr>
+		        <td><%= l(award.date) %></td>
+		        <td><%= award.award_name %></td>
+		        <% if user_signed_in? %>
+		        <td><%= link_to raw('<i class="fa fa-pencil"></i>'), edit_award_path(award), :class => "button tiny expand" %></td>
+		        <td><%= link_to raw('<i class="fa fa-times-circle"></i>'), award, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button tiny expand"  %></td>
+		        <% end %>
+		      </tr>
+		    <% end %>
+		    </table>
+		  </div>
+		  <div class="content" id="references">
+		  	<%= link_to "Add Reference", new_reference_path, :class => "button right" %>
+		  	<h1><i class="fa fa-users"></i> References</h1>
+		    <table>
+		      <thead>
+		        <tr>
+		          <th>Reference name</th>
+		          <th>Reference title</th>
+		          <th>Reference phone</th>
+		          <% if user_signed_in? %>
+		          <th></th>
+		          <th></th>
+		          <% end %>
+		        </tr>
+		      </thead>
+
+		      <tbody>
+		        <% @references.each do |reference| %>
+		          <tr>
+		            <td><a href="mailto:<%= reference.reference_email %>"><%= reference.reference_name %></a></td>
+		            <td><%= reference.reference_title %></td>
+		            <td><a href="tel:<%= reference.reference_phone %>"><%= reference.reference_phone %></a></td>
+		            <% if user_signed_in? %>
+		            <td><%= link_to raw('<i class="fa fa-pencil"></i>'), edit_reference_path(reference), :class => "button tiny expand" %></td>
+		            <td><%= link_to raw('<i class="fa fa-times-circle"></i>'), reference, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button tiny expand" %></td>
+		            <% end %>
+		          </tr>
+		        <% end %>
+		      </tbody>
+		    </table>
+		  </div>
+		  <div class="content" id="stats">
+		  	<h1><i class="fa fa-bar-chart-o"></i> Stats</h1>
+		  	<div class="clearfix">
+		  			<%= link_to "Add Kickoff", new_punt_path, :class => "button right" %>
+		  		  <h2>Kickoffs</h2>
+		  		  <table>
+		  		    <thead>
+		  		      <tr> 
+		  		        <th>Date</th>
+		  		        <th>Distance</th>
+		  		        <th>Hangtime</th>
+		  		        <% if user_signed_in? %>
+		  		          <th></th>
+		  		          <th></th>
+		  		        <% end %>
+		  		      </tr>
+		  		    </thead>
+		  		    <tbody>
+		  		      <% @kickoffs.each do |kickoff| %>
+		  		        <tr>
+		  		          <td><%= l(kickoff.date)  %></td>
+		  		          <td><%= kickoff.distance %></td>
+		  		          <td><%= kickoff.hangtime %></td>
+		  		          <% if user_signed_in? %>
+		  		            <td><%= link_to raw('<i class="fa fa-pencil"></i>'), edit_kickoff_path(kickoff), :class => "button tiny expand"  %></td>
+		  		            <td><%= link_to raw('<i class="fa fa-times-circle"></i>'), kickoff, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button tiny expand"  %></td>
+		  		          <% end %>
+		  		        </tr>
+		  		      <% end %>
+		  		      </tbody>
+		  		  </table>
+		  	</div>
+		    <div class="clearfix">
+		    	<%= link_to "Add Field Goal", new_field_goal_path, :class => "button right" %>
+		    	<h2>Field Goals</h2>
+		    	<table>
+		    	  <thead>
+		    	  <tr>
+		    	    <th>Date</th>
+		    	    <th>Distance</th>
+		    	    <th>FG Good?</th>
+		    	    <% if user_signed_in? %>
+		    	    <th></th>
+		    	    <th></th>
+		    	    <% end %>
+		    	  </tr>
+		    	  </thead>
+		    	  <tbody>
+		    	    <% @field_goals.each do |field_goal| %>
+		    	    <tr>
+		    	      <td><%= l(field_goal.date) %></td>
+		    	      <td><%= field_goal.distance %></td>
+		    	      <td><%= field_goal.is_good  ? 'Yes' : 'No' %></td>
+		    	      <% if user_signed_in? %>
+		    	      <td><%= link_to raw('<i class="fa fa-pencil"></i>'), edit_field_goal_path(field_goal), :class => "button tiny expand"  %></td>
+		    	      <td><%= link_to raw('<i class="fa fa-times-circle"></i>'), field_goal, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button tiny expand"  %></td>
+		    	      <% end %>
+		    	    </tr>
+		    	    <% end %>
+		    	  </tbody>
+		    	</table>
+		    </div>
+		    <div class="clearfix">
+		    	<%= link_to "Add Punt", new_punt_path, :class => "button right" %>
+		    	<h2>Punts</h2>
+		    	    <table>
+		    	    <thead>
+		    	      <tr>
+		    	        <th>Date</th>
+		    	        <th>Distance</th>
+		    	        <th>Hangtime</th>
+		    	        <% if user_signed_in? %>
+		    	          <th></th>
+		    	          <th></th>
+		    	        <% end %>
+		    	      </tr>
+		    	    </thead> 
+		    	    <tbody>
+		    	      <% @punts.each do |punt| %>
+		    	        <tr>
+		    	          <td><%= l(punt.date) %></td>
+		    	          <td><%= punt.distance %></td>
+		    	          <td><%= punt.hangtime %></td>
+		    	          <% if user_signed_in? %>
+		    	            <td><%= link_to raw('<i class="fa fa-pencil"></i>'), edit_punt_path(punt), :class => "button tiny expand"  %></td>
+		    	            <td><%= link_to raw('<i class="fa fa-times-circle"></i>'), punt, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button tiny expand"  %></td>
+		    	          <% end %>
+		    	        </tr>
+		    	      <% end %>
+		    	    </tbody>
+		    	</table>
+		    </div>
+		    <div class="clearfix">
+		    	<%= link_to "Add PAT", new_point_after_attempt_path, :class => "button right" %>
+		    	<h2>PATs</h2>
+		    	<table>
+		    	  <thead>
+		    	    <tr>
+		    	    <th>Date</th>
+		    	    <th>PAT Good?</th>
+		    	    <% if user_signed_in? %>
+		    	      <th></th>
+		    	      <th></th>
+		    	    <% end %>
+		    	  </tr>
+		    	  </thead>
+
+		    	  <tbody>
+		    	    <% @point_after_attempts.each do |point_after_attempt| %>
+		    	  <tr>
+		    	    <td><%= l(point_after_attempt.date) %></td>
+		    	    <td><%= point_after_attempt.is_good ? 'Yes' : 'No'  %></td>
+		    	    <% if user_signed_in? %>
+		    	      <td><%= link_to raw('<i class="fa fa-pencil"></i>'), edit_point_after_attempt_path(point_after_attempt), :class => "button tiny expand"  %></td>
+		    	      <td><%= link_to raw('<i class="fa fa-times-circle"></i>'), point_after_attempt, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button tiny expand"  %></td>
+		    	    <% end %>
+		    	  </tr>
+		    	<% end %>
+		    	  </tbody>
+		    	</table>
+		    </div>
+		  </div>
+		  <div class="content" id="college-lists">
+		  	<%= link_to 'Add Another College', new_college_wish_list_path , :class=> "button right" %>
+		  	<h1><i class="fa fa-apple"></i> College List</h1>
+		    <table>
+		      <thead>
+		          <tr>
+		            <th>College</th>
+		            <th>College Website</th>
+		            <th>Location</th>
+		            <th></th>
+		            <th></th>
+		            <th></th>
+		          </tr>
+		      </thead>
+		      <tbody>
+		          <% @college_wish_lists.each do |college_wish_list| %>
+		            <tr>
+		              <td><%= link_to college_wish_list.college_name, college_wish_list %></td>
+		              <td><a href="<%= college_wish_list.college_main_url %>">Website</a></td>
+		              <td><a href="https://www.google.com/maps/preview#!q=<%= college_wish_list.college_street_address %>%2C+<%= college_wish_list.college_city %>%2C+<%= college_wish_list.college_state %>" target="_blank" >Google Map</a></td>
+		              <td><%= link_to 'Show', college_wish_list %></td>
+		              <td><%= link_to raw('<i class="fa fa-pencil"></i>'), edit_college_wish_list_path(college_wish_list), :class=> "button tiny expand" %></td>
+		              <td><%= link_to raw('<i class="fa fa-times-circle"></i>'), college_wish_list, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button tiny expand" %></td>
+		            </tr>
+		          <% end %>
+		      </tbody>
+		    </table>
+		  </div>
+		  <div class="content" id="highlights-list">
+		  	<%= link_to 'Add Highlight', new_highlight_path , :class=> "button right" %>
+		  	<h1><i class="fa fa-video-camera"></i> Highlights</h1>
+		    <ul class="large-block-grid-6 medium-block-grid-3 small-block-grid-2 highlights">
+		    <% @highlights.each do |highlight| %>
+		      <li class="<%= highlight.kick_type %>">
+		        <%= link_to image_tag("http://img.youtube.com/vi/#{highlight.link}/0.jpg", :class => "img-responsive"), highlight  %>
+		        <p><%= highlight.title %><br><%= l(highlight.date) %></p>
+
+		        <div class="text-center">
+		          <% if user_signed_in? %>
+		          <%= link_to raw('<i class="fa fa-pencil"></i>'), edit_highlight_path(highlight), :class => "button tiny"  %>
+		          <%= link_to raw('<i class="fa fa-times-circle"></i>'), highlight, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button tiny"  %>
+		        </div>
+
+		        <% end %>
+		      </li>
+		    <% end %>
+		    </ul>
+		  </div>
+		</div>
 	</div>
 </div>

@@ -31,8 +31,8 @@
 
       <div class="text-center">
         <% if user_signed_in? %>
-        <%= link_to 'Edit', edit_highlight_path(highlight), :class => "button secondary tiny"  %>
-        <%= link_to 'Remove', highlight, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button secondary tiny"  %>
+        <%= link_to raw('<i class="fa fa-pencil"></i>'), edit_highlight_path(highlight), :class => "button tiny expand"  %>
+        <%= link_to raw('<i class="fa fa-times-circle"></i>'), highlight, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button secondary tiny"  %>
       </div>
 
       <% end %>

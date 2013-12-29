@@ -20,8 +20,8 @@
                   <td><a href="<%= college_wish_list.college_main_url %>">Website</a></td>
                   <td><a href="https://www.google.com/maps/preview#!q=<%= college_wish_list.college_street_address %>%2C+<%= college_wish_list.college_city %>%2C+<%= college_wish_list.college_state %>" target="_blank" >Google Map</a></td>
                   <td><%= link_to 'Show', college_wish_list %></td>
-                  <td><%= link_to 'Edit', edit_college_wish_list_path(college_wish_list) %></td>
-                  <td><%= link_to 'Destroy', college_wish_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <td><%= link_to raw('<i class="fa fa-pencil"></i>'), edit_college_wish_list_path(college_wish_list), :class=> "button tiny expand" %></td>
+                  <td><%= link_to raw('<i class="fa fa-times-circle"></i>'), college_wish_list, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button tiny expand" %></td>
                 </tr>
               <% end %>
           </tbody>

@@ -24,8 +24,8 @@
             <td><a href="mailto:<%= reference.reference_email %>"><%= reference.reference_email %></a></td>
             <td><a href="tel:<%= reference.reference_phone %>"><%= reference.reference_phone %></a></td>
             <% if user_signed_in? %>
-            <td><%= link_to 'Edit', edit_reference_path(reference) %></td>
-            <td><%= link_to 'Destroy', reference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to raw('<i class="fa fa-pencil"></i>'), edit_reference_path(reference), :class => "button tiny expand" %></td>
+            <td><%= link_to raw('<i class="fa fa-times-circle"></i>'), reference, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button tiny expand" %></td>
             <% end %>
           </tr>
         <% end %>

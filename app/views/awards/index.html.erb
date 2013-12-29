@@ -26,8 +26,8 @@
         <td><%= l(award.date) %></td>
         <td><%= award.award_name %></td>
         <% if user_signed_in? %>
-        <td><%= link_to 'Edit', edit_award_path(award) %></td>
-        <td><%= link_to 'Destroy', award, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to raw('<i class="fa fa-pencil"></i>'), edit_award_path(award), :class => "button tiny expand" %></td>
+        <td><%= link_to raw('<i class="fa fa-times-circle"></i>'), award, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button tiny expand"  %></td>
         <% end %>
       </tr>
     <% end %>

@@ -54,7 +54,7 @@
     </div>
     <div class="row hide-for-small-only">
         <div class="large-12 columns">
-            <hr>
+            <h2><i class="fa fa-bar-chart-o"></i> Stats</h2>
             <ul class="medium-block-grid-6 large-block-grid-6 text-center">
                 <li>
                     <h4>Height</h4>
@@ -126,7 +126,7 @@
     </div>
     <div class="row">
       <div class="large-12 columns">
-        <h2>Honors &amp; Awards</h2>
+        <h2><i class="fa fa-trophy"></i> Honors &amp; Awards</h2>
         <table>
           <thead>
               <tr>
@@ -144,8 +144,8 @@
                   <td><%= l(award.date) %></td>
                   <td><%= award.award_name %></td>
                   <% if user_signed_in? %>
-                  <td><%= link_to 'Edit', edit_award_path(award), :class=> "button tiny expand" %></td>
-                  <td><%= link_to 'Destroy', award, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "button tiny expand" %></td>
+                  <td><%= link_to raw('<i class="fa fa-pencil"></i>'), edit_award_path(award), :class=> "button tiny expand" %></td>
+                  <td><%= link_to raw('<i class="fa fa-times-circle"></i>'), award, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "button tiny expand" %></td>
                   <% end %>
                 </tr>
               <% end %>
@@ -158,7 +158,7 @@
     </div>
     <div class="row">
         <div class="large-12 columns">
-            <h2>School Contact Info</h2>
+            <h2><i class="fa fa-apple"></i> School Contact Info</h2>
 
             <div class="panel">
                 <div class="row">
@@ -190,7 +190,7 @@
         </div>
         
         <div class="large-12 columns">
-            <h2>References</h2>
+            <h2><i class="fa fa-users"></i> References</h2>
             <table>
               <thead>
                   <tr>
@@ -213,8 +213,8 @@
                       <td><a href="mailto:<%= reference.reference_email %>"><%= reference.reference_email %></a></td>
                       <td><a href="tel:<%= reference.reference_phone %>"><%= reference.reference_phone %></a></td>
                       <% if user_signed_in? %>
-                      <td><%= link_to 'Edit', edit_reference_path(reference), :class=> "button tiny expand" %></td>
-                      <td><%= link_to 'Destroy', reference, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "button tiny expand" %></td>
+                      <td><%= link_to raw('<i class="fa fa-pencil"></i>'), edit_reference_path(reference), :class=> "button tiny expand" %></td>
+                      <td><%= link_to raw('<i class="fa fa-times-circle"></i>'), reference, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "button tiny expand" %></td>
                       <% end %>
                     </tr>
               </tbody>
@@ -228,7 +228,7 @@
     <% if user_signed_in? %>
         <div class="row">
             <div class="large-12 columns">
-                <%= link_to 'Edit', edit_bio_path(bio), :class => "button"  %>
+                <%= link_to raw('<i class="fa fa-pencil"></i>'), edit_bio_path(bio), :class => "button"  %>
             </div>
         </div>
     <% end %>

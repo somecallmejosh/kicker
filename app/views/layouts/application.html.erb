@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= content_for?(:title) ? yield(:title) : "Kicking Prospect" %></title>
     <%= stylesheet_link_tag "application" %>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <%= csrf_meta_tags %>
   </head>
   <body>
@@ -37,14 +38,18 @@
           </ul>
           <section class="top-bar-section">
             <ul class="left">
-              <li><%= nav_link "Home", root_path %></li>
-              <li><%= nav_link "Kickers", static_pages_kicker_list_path %></li>
+              <li><%= nav_link raw('<i class="fa fa-home"></i>'), root_path %></li>
+              <li><%= nav_link raw('<i class="fa fa-list"></i> Kickers'), static_pages_kicker_list_path %></li>
             </ul>
             <ul class="right">
               <% if user_signed_in? %>
-                <li><%= nav_link "Admin", static_pages_admin_path %></li>
-                <li><%= nav_link "Log Out", logout_path %></li>  
+                <li><%= nav_link raw('<i class="fa fa-lock"></i>'), logout_path %></li>
+                <li><%= nav_link raw('<i class="fa fa-cog"></i>'), static_pages_admin_path %></li>
+                
+                <% else %>
+                  <li><%= nav_link raw('<i class="fa fa-unlock"></i>'), login_path %> </li>
               <% end %>
+              <li><a href="#"><i class="fa fa-info"></i></a></li>
             </ul>
           </section>
         </nav>

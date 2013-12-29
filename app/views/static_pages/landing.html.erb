@@ -26,16 +26,18 @@
 		<p><%= app_name %> is absolutely free to kickers and recruiting coaches. No strings attached. Simple easy to get started.</p>
 		<div class="row">
 			<div class="large-6 columns">
-				<%= link_to "Register", register_path, :class=> "button expand large" %>
+				<%= link_to raw('<i class="fa fa-pencil"></i> Register Now'), register_path, :class=> "button expand large" %>
 			</div>
 			<div class="large-6 columns">
-				<%= link_to "Search for Kickers", static_pages_kicker_list_path, :class=> "button secondary expand large"  %>
+				<%= link_to raw('<i class="fa fa-list"></i> Search for Kickers'), static_pages_kicker_list_path, :class=> "button secondary expand large"  %>
+			</div>
+			<div class="large-12 columns">
+				<ul class="inline-list">
+					<li><%= link_to raw('<i class="fa fa-unlock"></i> Login'), login_path %> </li>
+					<li><a href="#"><i class="fa fa-info"></i> Site Info</a></li>
+				</ul>
 			</div>
 		</div>
-		
-		
-		<p>
-			<%= link_to "Login", login_path %> | <a href="#">Site Info</a></p>
 	</div>
 
 </div>

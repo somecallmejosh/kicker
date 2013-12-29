@@ -4,7 +4,7 @@
 		<h1>Kicker List</h1>
 	</div>
 	<div class="large-3 columns">
-		<a href="#" class="button expand" data-reveal-id="searchModal">Advanced Search</a>
+		<a href="#" class="button expand" data-reveal-id="searchModal"><i class="fa fa-search"></i> Advanced Search</a>
 		<div id="searchModal" class="reveal-modal small" data-reveal>
 		  <h2>Search for Kicker By:</h2>
 		  <ul class="inline-list">
@@ -23,7 +23,7 @@
 	<div class="large-4 columns">
 		<h2>Kickoffs <small>Top 2</small></h2>
 			<div class="row">
-				<div class="large-6 columns"><img src="https://dl.dropboxusercontent.com/u/39806773/kicker/chase-bio-pic.jpg" class="img-responsive" alt=""></div>
+				<div class="large-6 columns"><%= link_to image_tag("https://dl.dropboxusercontent.com/u/39806773/kicker/chase-bio-pic.jpg"), bios_path, :class=> "img-responsive" %></div>
 				<div class="large-6 columns">
 					<p><strong><%= kicker_name %></strong><br>TB Avg: 99%</p>
 					<%= link_to "Bio", bios_path, :class=> "button tiny" %>
@@ -33,7 +33,7 @@
 				<div class="large-12 columns">
 					<hr>
 				</div>
-				<div class="large-6 columns"><img src="https://dl.dropboxusercontent.com/u/39806773/kicker/chase-bio-pic.jpg" class="img-responsive" alt=""></div>
+				<div class="large-6 columns"><%= link_to image_tag("https://dl.dropboxusercontent.com/u/39806773/kicker/chase-bio-pic.jpg"), bios_path, :class=> "img-responsive" %></div>
 				<div class="large-6 columns">
 					<p><strong><%= kicker_name %></strong><br>TB Avg: 99%</p>
 					<%= link_to "Bio", bios_path, :class=> "button tiny" %>
@@ -43,7 +43,9 @@
 	<div class="large-4 columns">
 		<h2>Field Goals <small>Top 2</small></h2>
 		<div class="row">
-				<div class="large-6 columns"><img src="https://dl.dropboxusercontent.com/u/39806773/kicker/chase-bio-pic.jpg" class="img-responsive" alt=""></div>
+				<div class="large-6 columns">
+					<%= link_to image_tag("https://dl.dropboxusercontent.com/u/39806773/kicker/chase-bio-pic.jpg"), bios_path, :class=> "img-responsive" %>
+					</div>
 				<div class="large-6 columns">
 					<p><strong><%= kicker_name %></strong><br>FG Avg: 99%</p>
 					<%= link_to "Bio", bios_path, :class=> "button tiny" %>
@@ -53,7 +55,7 @@
 				<div class="large-12 columns">
 					<hr>
 				</div>
-				<div class="large-6 columns"><img src="https://dl.dropboxusercontent.com/u/39806773/kicker/chase-bio-pic.jpg" class="img-responsive" alt=""></div>
+				<div class="large-6 columns"><%= link_to image_tag("https://dl.dropboxusercontent.com/u/39806773/kicker/chase-bio-pic.jpg"), bios_path, :class=> "img-responsive" %></div>
 				<div class="large-6 columns">
 					<p><strong><%= kicker_name %></strong><br>FG Avg: 99%</p>
 					<%= link_to "Bio", bios_path, :class=> "button tiny" %>
@@ -63,7 +65,7 @@
 	<div class="large-4 columns">
 		<h2>Punts <small>Top 2</small></h2>
 		<div class="row">
-			<div class="large-6 columns"><img src="https://dl.dropboxusercontent.com/u/39806773/kicker/chase-bio-pic.jpg" class="img-responsive" alt=""></div>
+			<div class="large-6 columns"><%= link_to image_tag("https://dl.dropboxusercontent.com/u/39806773/kicker/chase-bio-pic.jpg"), bios_path, :class=> "img-responsive" %></div>
 			<div class="large-6 columns">
 				<p><strong><%= kicker_name %></strong><br>Punt Avg: 49yds</p>
 					<%= link_to "Bio", bios_path, :class=> "button tiny" %>
@@ -73,7 +75,7 @@
 			<div class="large-12 columns">
 				<hr>
 			</div>
-			<div class="large-6 columns"><img src="https://dl.dropboxusercontent.com/u/39806773/kicker/chase-bio-pic.jpg" class="img-responsive" alt=""></div>
+			<div class="large-6 columns"><%= link_to image_tag("https://dl.dropboxusercontent.com/u/39806773/kicker/chase-bio-pic.jpg"), bios_path, :class=> "img-responsive" %></div>
 			<div class="large-6 columns">
 				<p><strong><%= kicker_name %></strong><br>Punt Avg: 49yds</p>
 					<%= link_to "Bio", bios_path, :class=> "button tiny" %>
