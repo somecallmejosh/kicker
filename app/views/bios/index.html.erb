@@ -1,11 +1,11 @@
 <% provide(:title, kicker_name + " | Bio") %>
 <% @bios.each do |bio| %>
     <div class="row">
-        <div class="large-8 medium-8 columns">
+        <div class="large-11 medium-11 columns">
             <h1><%= bio.first_name %> <%= bio.last_name %> <small>Bio</small></h1>
         </div>
-        <div class="large-4 medium-4 columns">
-            <a href="#" class="button expand" data-reveal-id="followModal">Follow <%= bio.first_name %></a>
+        <div class="large-1 medium-1 columns">
+            <a href="#" class="button expand" data-reveal-id="followModal"><i class="fa fa-star"></i></a>
             <div id="followModal" class="reveal-modal small" data-reveal>
               <h2>Follow <%= bio.first_name %> <%= bio.last_name %></h2>
               <p>GPA changes, SAT changes, highlight updates, new awards, significant changes to stats, etc.</p>
