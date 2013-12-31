@@ -4,11 +4,6 @@ gem 'rails', '3.2.13'
 gem 'simple_form'
 gem 'devise'
 
-# this is for the Heroku Deprecation warning.
-gem 'rails_12factor'
-
-
-
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -18,6 +13,8 @@ end
 
 group :production do 
 	gem 'pg'
+	# this is for the Heroku Deprecation warning.
+	gem 'rails_12factor'
 end
 
 
