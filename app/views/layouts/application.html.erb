@@ -13,7 +13,8 @@
       <div class="inner-wrap">
         <aside class="left-off-canvas-menu">
           <ul class="off-canvas-list">
-            <li><label class="first"><%= app_name %></label></li>
+            <li><label class="first"><%= image_tag('https://dl.dropboxusercontent.com/u/39806773/kicker/logo-small-white.png') %>
+</label></li>
             <li><%= nav_link "Home", root_path %></li>
             <li><%= nav_link "Kickers", static_pages_kicker_list_path %></li>
           </ul>
@@ -31,14 +32,9 @@
           </a>
         </nav>
         <nav class="top-bar show-for-large-up" data-topbar>
-          <ul class="title-area">
-            <li class="name">
-              <h1><a href="/"><%= app_name %></a></h1>
-            </li>
-          </ul>
           <section class="top-bar-section">
             <ul class="left">
-              <li><%= nav_link raw('<i class="fa fa-home"></i>'), root_path %></li>
+              <li><%= nav_link image_tag('https://dl.dropboxusercontent.com/u/39806773/kicker/logo-small-white.png'), root_path %></li>
               <li><%= nav_link raw('<i class="fa fa-list"></i> Kickers'), static_pages_kicker_list_path %></li>
             </ul>
             <ul class="right">
